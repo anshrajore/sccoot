@@ -1,0 +1,14 @@
+project_id = "scoot-local"
+
+[api]
+enabled = true
+port = 54321
+
+[db]
+port = 54322
+
+[realtime]
+enabled = true
+
+[functions.api]
+verify_jwt = false

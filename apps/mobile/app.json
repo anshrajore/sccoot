@@ -1,0 +1,14 @@
+{
+  "expo": {
+    "name": "Scoot",
+    "slug": "scoot",
+    "scheme": "scoot",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "plugins": ["expo-router"],
+    "ios": { "supportsTablet": false, "bundleIdentifier": "network.scoot.app" },
+    "android": { "package": "network.scoot.app" },
+    "experiments": { "typedRoutes": true }
+  }
+}

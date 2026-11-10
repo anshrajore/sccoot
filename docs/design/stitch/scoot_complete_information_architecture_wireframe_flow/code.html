@@ -1,0 +1,596 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scoot — Comprehensive Information Architecture &amp; Interactive Wireframe Flow</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          },
+          colors: {
+            brand: {
+              purple: '#7c5ce6',
+              purpleLight: '#f3f0ff',
+              purpleDark: '#5636c7',
+              ochre: '#f59e0b',
+              amber: '#fef3c7',
+              surface: '#faf8ff',
+              navy: '#0f172a'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #f6f5fb;
+      color: #1e1b4b;
+    }
+    .connector-line {
+      position: absolute;
+      pointer-events: none;
+    }
+    .flow-badge {
+      font-size: 0.65rem;
+      letter-spacing: 0.05em;
+    }
+    .screen-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 25px -5px rgba(124, 92, 230, 0.15), 0 8px 10px -6px rgba(124, 92, 230, 0.1);
+    }
+  </style>
+</head>
+<body class="font-sans antialiased min-h-screen p-4 md:p-8">
+
+  <!-- Header & Executive Architecture Overview -->
+  <div><div class="flex items-center gap-3 mb-4"><div class="w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-sm">E</div><h2 class="text-lg font-bold text-slate-900">Stage E: Recurring Commute Circles &amp; Semester Timetable Sync</h2><span class="text-xs text-slate-400 font-mono">FLOW_DIR: Academic ERP ⇄ Recurring Peer Pool</span></div><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div class="screen-card transition-all duration-300 bg-white rounded-3xl border border-purple-100 shadow-sm p-6 flex flex-col justify-between"><div><div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-3"><span class="flow-badge px-2 py-0.5 bg-indigo-100 text-indigo-700 font-bold rounded-full">TIMETABLE AUTOMATION</span><span class="text-[11px] font-mono text-slate-400">SCREEN_26</span></div><h3 class="text-lg font-bold text-slate-900 mb-1">Academic Timetable Auto-Sync</h3><p class="text-xs text-slate-500 mb-4">Sync COEP MIS calendar once. Scoot predicts weekly recurring rides and matches lab peers.</p><div class="bg-slate-50 border border-slate-200/70 rounded-2xl p-4 space-y-3 text-xs"><div class="bg-white p-3 rounded-xl border border-slate-200 flex justify-between items-center"><div><span class="text-[10px] text-slate-400 uppercase font-bold">Synced MIS Feed</span><div class="text-sm font-bold text-slate-900">Fluid Mechanics Lab (08:30 AM)</div></div><span class="px-2.5 py-1 bg-emerald-100 text-emerald-700 rounded-lg font-bold text-[11px]">Mon, Wed, Fri Auto-Match</span></div><div class="bg-indigo-50 border border-indigo-200 p-2.5 rounded-xl flex items-center justify-between"><span class="text-[11px] text-indigo-900 font-medium">Recurring Pool: Tanvi D. (Tiago EV)</span><span class="font-bold text-indigo-700 text-xs">Locked for Term</span></div></div></div><div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs"><span class="text-slate-400 font-medium">Eliminates Daily Search →</span><span class="px-2.5 py-1 bg-indigo-50 text-indigo-700 font-bold rounded-lg text-[11px]">Zero Friction Loop</span></div></div><div class="screen-card transition-all duration-300 bg-white rounded-3xl border border-purple-100 shadow-sm p-6 flex flex-col justify-between"><div><div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-3"><span class="flow-badge px-2 py-0.5 bg-purple-100 text-brand-purple font-bold rounded-full">COMMUTE CIRCLE</span><span class="text-[11px] font-mono text-slate-400">SCREEN_28</span></div><h3 class="text-lg font-bold text-slate-900 mb-1">Department &amp; Hostel Micro-Circles</h3><p class="text-xs text-slate-500 mb-4">Restricted micro-circles for Mechanical '25 or Girls Hostel 2 with verified trust covenants.</p><div class="bg-slate-50 border border-slate-200/70 rounded-2xl p-4 space-y-3 text-xs"><div class="bg-purple-100/70 p-3 rounded-xl border border-purple-200 flex justify-between items-center"><div><div class="text-[11px] font-bold text-brand-purple">Hostel 2 ⇄ North Campus Pod</div><div class="text-[9px] text-purple-700">18 Members • 100% Female Verified</div></div><span class="bg-white px-2 py-0.5 rounded text-[10px] font-bold text-brand-purple">Active Pod</span></div><div class="bg-white p-2.5 rounded-xl border border-slate-200 flex justify-between items-center text-[10px]"><span class="text-slate-600">Automatic Fair-Cost Split:</span><span class="font-bold text-slate-900">Rotational Fuel Wallet</span></div></div></div><div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs"><span class="text-slate-400 font-medium">Connects to Rendezvous →</span><span class="px-2.5 py-1 bg-purple-50 text-brand-purple font-bold rounded-lg text-[11px]">Trusted Circle Vetted</span></div></div></div></div><div><div class="flex items-center gap-3 mb-4"><div class="w-8 h-8 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold text-sm">F</div><h2 class="text-lg font-bold text-slate-900">Stage F: Zero-PII Rendezvous &amp; Night Shield Escort</h2><span class="text-xs text-slate-400 font-mono">FLOW_DIR: Gate Geofence ⇄ Ephemeral Voice Token</span></div><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div class="screen-card transition-all duration-300 bg-white rounded-3xl border border-purple-100 shadow-sm p-6 flex flex-col justify-between"><div><div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-3"><span class="flow-badge px-2 py-0.5 bg-blue-100 text-blue-700 font-bold rounded-full">PRIVACY GATE</span><span class="text-[11px] font-mono text-slate-400">SCREEN_30</span></div><h3 class="text-lg font-bold text-slate-900 mb-1">Zero-PII Gate Rendezvous Intercom</h3><p class="text-xs text-slate-500 mb-4">Ephemeral push-to-talk voice channel without exchanging student mobile numbers or socials.</p><div class="bg-slate-50 border border-slate-200/70 rounded-2xl p-4 space-y-3 text-xs"><div class="bg-white p-3 rounded-xl border border-slate-200 flex justify-between items-center"><div><div class="text-[10px] text-slate-400 uppercase font-bold">Designated Pickup Point</div><div class="text-sm font-bold text-slate-800">COEP Gate 3 (Boat Club Turn)</div></div><span class="px-2 py-1 bg-amber-100 text-amber-900 rounded-md font-bold text-[10px]">Geo-Beacon Lock</span></div><div class="bg-blue-50 border border-blue-200 p-2.5 rounded-xl flex items-center justify-between text-[11px]"><span class="text-blue-900 font-medium">🎙️ Masked PTT Intercom</span><span class="text-blue-700 font-bold">Auto-Destructs at Ride Start</span></div></div></div><div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs"><span class="text-slate-400 font-medium">Zero Personal Data Exposure →</span><span class="px-2.5 py-1 bg-blue-50 text-blue-700 font-bold rounded-lg text-[11px]">DPDP Compliant</span></div></div><div class="screen-card transition-all duration-300 bg-white rounded-3xl border border-rose-100 shadow-sm p-6 flex flex-col justify-between"><div><div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-3"><span class="flow-badge px-2 py-0.5 bg-rose-100 text-rose-700 font-bold rounded-full">LATE NIGHT PROTOCOL</span><span class="text-[11px] font-mono text-slate-400">SCREEN_32</span></div><h3 class="text-lg font-bold text-slate-900 mb-1">Night Shield &amp; Stationary Anomaly Guard</h3><p class="text-xs text-slate-500 mb-4">Automatic 45-second stationary timer for night rides (&gt;8:30 PM) with campus marshal live ping.</p><div class="bg-slate-50 border border-slate-200/70 rounded-2xl p-4 space-y-3 text-xs"><div class="bg-rose-50 border border-rose-200 p-3 rounded-xl flex justify-between items-center"><div><div class="text-[11px] font-bold text-rose-950">Night Shield Mode [ACTIVE]</div><div class="text-[9px] text-rose-700">Auto-Notifies Hostel Warden &amp; Guard</div></div><span class="w-3 h-3 bg-rose-600 rounded-full animate-ping"></span></div><div class="bg-white p-2.5 rounded-xl border border-slate-200 flex justify-between items-center text-[10px]"><span class="text-slate-600">45s Stationary Auto-Escalation:</span><span class="font-bold text-rose-600">Zero False-Alert Haptic Check</span></div></div></div><div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs"><span class="text-slate-400 font-medium">Escalates to Marshal Portal →</span><span class="px-2.5 py-1 bg-rose-50 text-rose-700 font-bold rounded-lg text-[11px]">COEP Control Link</span></div></div></div></div><div><div class="flex items-center gap-3 mb-4"><div class="w-8 h-8 rounded-full bg-blue-700 text-white flex items-center justify-center font-bold text-sm">G</div><h2 class="text-lg font-bold text-slate-900">Stage G: Campus Security &amp; Marshal Command Console</h2><span class="text-xs text-slate-400 font-mono">FLOW_DIR: University Safety Desk ⇄ Active Transit Telemetry</span></div><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div class="screen-card transition-all duration-300 bg-white rounded-3xl border border-purple-100 shadow-sm p-6 flex flex-col justify-between"><div><div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-3"><span class="flow-badge px-2 py-0.5 bg-blue-100 text-blue-700 font-bold rounded-full">MARSHAL COMMAND</span><span class="text-[11px] font-mono text-slate-400">SCREEN_34</span></div><h3 class="text-lg font-bold text-slate-900 mb-1">Campus Marshal Incident Dispatch</h3><p class="text-xs text-slate-500 mb-4">Web command center for campus security officers showing active corridor vehicles and panic alerts.</p><div class="bg-slate-50 border border-slate-200/70 rounded-2xl p-4 space-y-3 text-xs"><div class="bg-white p-3 rounded-xl border border-slate-200 flex justify-between items-center"><div><div class="text-[10px] text-slate-400 uppercase font-bold">Active Monitored Corridor</div><div class="text-sm font-bold text-slate-800">142 COEP Peer Rides Live</div></div><span class="px-2 py-1 bg-emerald-100 text-emerald-700 rounded-md font-bold text-[10px]">Corridor Clear</span></div><div class="bg-purple-50 border border-purple-200 p-2.5 rounded-xl flex justify-between items-center text-[10px]"><span class="text-purple-900 font-medium">EV Bay 4 Reservation Sync:</span><span class="font-bold text-brand-purple">3 Host Slots Reserved</span></div></div></div><div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs"><span class="text-slate-400 font-medium">Broadcasts Campus Notice →</span><span class="px-2.5 py-1 bg-blue-50 text-blue-700 font-bold rounded-lg text-[11px]">Institutional Guard</span></div></div><div class="screen-card transition-all duration-300 bg-white rounded-3xl border border-emerald-100 shadow-sm p-6 flex flex-col justify-between"><div><div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-3"><span class="flow-badge px-2 py-0.5 bg-emerald-100 text-emerald-800 font-bold rounded-full">SUSTAINABILITY AUDIT</span><span class="text-[11px] font-mono text-slate-400">SCREEN_36</span></div><h3 class="text-lg font-bold text-slate-900 mb-1">COEP Net-Zero &amp; Traffic Audit Portal</h3><p class="text-xs text-slate-500 mb-4">University-level carbon offset metrics, two-wheeler congestion reductions, and shared mobility credits.</p><div class="bg-slate-50 border border-slate-200/70 rounded-2xl p-4 space-y-3 text-xs"><div class="bg-emerald-500 text-white p-3 rounded-xl flex justify-between items-center"><div><div class="text-[10px] opacity-80 uppercase font-bold">Monthly CO₂ Avoided</div><div class="text-base font-black">3,840 kg CO₂e</div></div><span class="bg-white/20 px-2 py-1 rounded text-[10px] font-bold">NAAC Grade A+ Audit Ready</span></div><div class="bg-white p-2.5 rounded-xl border border-slate-200 flex justify-between items-center text-[10px]"><span class="text-slate-600">Gate 3 Congestion Relief:</span><span class="font-bold text-emerald-700">-38% Peak Parking Load</span></div></div></div><div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs"><span class="text-slate-400 font-medium">Reports to Syndicate →</span><span class="px-2.5 py-1 bg-emerald-50 text-emerald-800 font-bold rounded-lg text-[11px]">Annual ESG Export</span></div></div></div></div><div class="max-w-7xl mx-auto mb-8 bg-white border border-purple-100 rounded-3xl p-6 md:p-8 shadow-sm">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-purple-50">
+      <div class="flex items-center gap-4">
+        <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-[#7c5ce6] to-[#a78bfa] flex items-center justify-center text-white shadow-md shadow-purple-200">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+          </svg>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="px-2.5 py-0.5 rounded-full bg-purple-100 text-brand-purple text-xs font-semibold uppercase tracking-wider">Complete Ecosystem Wireframe</span>
+            <span class="px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-700 text-xs font-semibold">15 Connected User Journeys &amp; Campus Integrations</span>
+          </div>
+          <h1 class="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">Scoot — Connected End-to-End System Blueprint</h1>
+          <p class="text-sm text-slate-500 mt-1">Full state transitions, security handshakes, ride telemetry, and peer ledger architecture.</p>
+        </div>
+      </div>
+      <div class="flex flex-wrap items-center gap-3">
+        <div class="px-4 py-2 bg-slate-50 border border-slate-200 rounded-2xl text-xs font-medium text-slate-600">
+          <span class="text-slate-400">Target Corridor:</span> FC Road ⇄ COEP Tech
+        </div>
+        <div class="px-4 py-2 bg-purple-50 border border-purple-200 rounded-2xl text-xs font-semibold text-brand-purple">
+          AISHE Verified &amp; DigiLocker Gated
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Pillars Key -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-2.5 pt-6"><div class="p-2.5 bg-purple-50/60 rounded-2xl border border-purple-100/80"><span class="block text-[10px] font-bold text-brand-purple uppercase">Stage 01</span><span class="text-xs font-bold text-slate-800">Identity &amp; Trust</span><span class="block text-[11px] text-slate-500 mt-0.5">DigiLocker &amp; Passport</span></div><div class="p-2.5 bg-purple-50/60 rounded-2xl border border-purple-100/80"><span class="block text-[10px] font-bold text-brand-purple uppercase">Stage 02</span><span class="text-xs font-bold text-slate-800">Route Discovery</span><span class="block text-[11px] text-slate-500 mt-0.5">Bike &amp; Car Multi-Modal</span></div><div class="p-2.5 bg-purple-50/60 rounded-2xl border border-purple-100/80"><span class="block text-[10px] font-bold text-brand-purple uppercase">Stage 03</span><span class="text-xs font-bold text-slate-800">Host Decisioning</span><span class="block text-[11px] text-slate-500 mt-0.5">Seat Lock &amp; Polite Flow</span></div><div class="p-2.5 bg-amber-50/60 rounded-2xl border border-amber-100/80"><span class="block text-[10px] font-bold text-amber-700 uppercase">Stage 04</span><span class="text-xs font-bold text-slate-800">Live Telemetry</span><span class="block text-[11px] text-slate-500 mt-0.5">Corridor Map &amp; Speed Cap</span></div><div class="p-2.5 bg-rose-50/60 rounded-2xl border border-rose-100/80"><span class="block text-[10px] font-bold text-rose-700 uppercase">Stage 05</span><span class="text-xs font-bold text-slate-800">Campus SOS Guard</span><span class="block text-[11px] text-slate-500 mt-0.5">On-Device AI Audio</span></div><div class="p-2.5 bg-emerald-50/60 rounded-2xl border border-emerald-100/80"><span class="block text-[10px] font-bold text-emerald-700 uppercase">Stage 06</span><span class="text-xs font-bold text-slate-800">Non-Profit Ledger</span><span class="block text-[11px] text-slate-500 mt-0.5">UPI Split &amp; EV Offset</span></div><div class="p-2.5 bg-indigo-50/60 rounded-2xl border border-indigo-100/80"><span class="block text-[10px] font-bold text-indigo-700 uppercase">Stage 07</span><span class="text-xs font-bold text-slate-800">Marshal Command</span><span class="block text-[11px] text-slate-500 mt-0.5">Gate Beacon &amp; Fleet Ops</span></div></div>
+  </div>
+
+  <!-- Interactive System Map Container -->
+  <div class="max-w-7xl mx-auto space-y-12 pb-16">
+
+    <!-- FLOW ROW 1: Onboarding, Verification & Discovery -->
+    <div>
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-8 h-8 rounded-full bg-brand-purple text-white flex items-center justify-center font-bold text-sm">A</div>
+        <h2 class="text-lg font-bold text-slate-900">Stage A: Zero-Trust Verification &amp; Pre-Ride Discovery</h2>
+        <span class="text-xs text-slate-400 font-mono">FLOW_DIR: Rider/Host Mutual Handshake</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
+
+        <!-- Wireframe Node 1: Passport -->
+        <div class="screen-card transition-all duration-300 bg-white rounded-3xl border border-purple-100 shadow-sm p-5 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-3">
+              <span class="flow-badge px-2 py-0.5 bg-purple-100 text-brand-purple font-bold rounded-full">CORE PASSPORT</span>
+              <span class="text-[11px] font-mono text-slate-400">SCREEN_6</span>
+            </div>
+            <h3 class="text-base font-bold text-slate-900 mb-1">Student Mobility Passport</h3>
+            <p class="text-xs text-slate-500 mb-4">Gatekeeper before any rider or driver enters the peer network.</p>
+            
+            <!-- Mini Wireframe Render -->
+            <div class="bg-slate-50 border border-slate-200/70 rounded-2xl p-3 space-y-2 text-xs">
+              <div class="h-4 bg-purple-200/70 rounded-md w-3/4"></div>
+              <div class="grid grid-cols-2 gap-2">
+                <div class="bg-amber-100 p-2 rounded-xl border border-amber-200">
+                  <div class="h-2 w-10 bg-amber-400 rounded"></div>
+                  <span class="text-[10px] font-bold text-amber-900 block mt-1">Aadhaar Linked</span>
+                </div>
+                <div class="bg-purple-100 p-2 rounded-xl border border-purple-200">
+                  <div class="h-2 w-10 bg-purple-400 rounded"></div>
+                  <span class="text-[10px] font-bold text-purple-900 block mt-1">@coep.ac.in SSO</span>
+                </div>
+              </div>
+              <div class="bg-white p-2 rounded-xl border border-slate-200 flex items-center justify-between">
+                <span class="text-[10px] font-bold text-slate-700">Safe Commuter Score</span>
+                <span class="text-xs font-black text-brand-purple">98/100</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+            <span class="text-slate-400 font-medium">Triggers Route Feed →</span>
+            <span class="px-2.5 py-1 bg-purple-50 text-brand-purple font-bold rounded-lg text-[11px]">AISHE Verified</span>
+          </div>
+        </div>
+
+        <!-- Wireframe Node 2: Route Matching -->
+        <div class="screen-card transition-all duration-300 bg-white rounded-3xl border border-purple-100 shadow-sm p-5 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-3">
+              <span class="flow-badge px-2 py-0.5 bg-blue-100 text-blue-700 font-bold rounded-full">COMMUTE DISCOVERY</span>
+              <span class="text-[11px] font-mono text-slate-400">SCREEN_10</span>
+            </div>
+            <h3 class="text-base font-bold text-slate-900 mb-1">Route Matching (Bike &amp; Car)</h3>
+            <p class="text-xs text-slate-500 mb-4">Real-time matching along student corridors with multi-modal pills.</p>
+            
+            <!-- Mini Wireframe Render -->
+            <div class="bg-slate-50 border border-slate-200/70 rounded-2xl p-3 space-y-2 text-xs">
+              <div class="flex gap-2">
+                <div class="bg-purple-600 text-white text-[10px] font-bold px-2 py-1 rounded-lg">Bike • ₹16</div>
+                <div class="bg-slate-200 text-slate-700 text-[10px] font-bold px-2 py-1 rounded-lg">Carpool • ₹32</div>
+              </div>
+              <div class="bg-white p-2.5 rounded-xl border border-purple-100">
+                <div class="flex justify-between items-center mb-1">
+                  <span class="font-bold text-slate-800 text-[11px]">Yash K. (Ather 450X)</span>
+                  <span class="text-emerald-600 font-bold text-[10px]">13 min (-12m)</span>
+                </div>
+                <div class="text-[10px] text-slate-500">Deccan ➔ COEP Gate 3 • ₹16</div>
+              </div>
+              <div class="bg-white p-2.5 rounded-xl border border-amber-100">
+                <div class="flex justify-between items-center mb-1">
+                  <span class="font-bold text-slate-800 text-[11px]">Tanvi D. (Tiago EV)</span>
+                  <span class="text-purple-600 font-bold text-[10px]">3 Seats Open</span>
+                </div>
+                <div class="text-[10px] text-slate-500">Kothrud ➔ COEP Portico • ₹32</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+            <span class="text-slate-400 font-medium">Select Host Profile →</span>
+            <span class="px-2.5 py-1 bg-blue-50 text-blue-700 font-bold rounded-lg text-[11px]">Dynamic Switch</span>
+          </div>
+        </div>
+
+        <!-- Wireframe Node 3: Mutual Trust Profile -->
+        <div class="screen-card transition-all duration-300 bg-white rounded-3xl border border-purple-100 shadow-sm p-5 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-3">
+              <span class="flow-badge px-2 py-0.5 bg-amber-100 text-amber-800 font-bold rounded-full">PEER EVALUATION</span>
+              <span class="text-[11px] font-mono text-slate-400">SCREEN_2</span>
+            </div>
+            <h3 class="text-base font-bold text-slate-900 mb-1">Mutual Student Trust Profile</h3>
+            <p class="text-xs text-slate-500 mb-4">Mutual friends, smooth accelerometer score &amp; commute vibe.</p>
+            
+            <!-- Mini Wireframe Render -->
+            <div class="bg-slate-50 border border-slate-200/70 rounded-2xl p-3 space-y-2 text-xs">
+              <div class="bg-amber-400 text-slate-900 p-2.5 rounded-xl">
+                <div class="font-bold text-[11px]">Tanvi Deshpande (COEP '25)</div>
+                <div class="text-[10px] opacity-90">Hostel 2 • 4.97 ★ • 144 rides</div>
+              </div>
+              <div class="bg-purple-50 border border-purple-100 p-2 rounded-xl">
+                <span class="text-[10px] font-bold text-purple-900">👥 8 Mutual Campus Peers</span>
+                <span class="block text-[9px] text-purple-600 mt-0.5">Yash K., Shreya P., Dev M.</span>
+              </div>
+              <div class="grid grid-cols-2 gap-2 text-[10px]">
+                <div class="bg-white p-1.5 rounded-lg border border-slate-200 text-center font-bold">99.2% On-Time</div>
+                <div class="bg-white p-1.5 rounded-lg border border-slate-200 text-center font-bold text-emerald-600">0 Hard Brakes</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+            <span class="text-slate-400 font-medium">Click "Ride with Tanvi" →</span>
+            <span class="px-2.5 py-1 bg-amber-50 text-amber-800 font-bold rounded-lg text-[11px]">1-Tap Request</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- FLOW ROW 2: Host Offer, Seat Management & Polite Fallbacks -->
+    <div>
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-8 h-8 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold text-sm">B</div>
+        <h2 class="text-lg font-bold text-slate-900">Stage B: Driver Publishing, Seat Locking &amp; Polite Exceptions</h2>
+        <span class="text-xs text-slate-400 font-mono">FLOW_DIR: Host Route Publish ⇄ Rider Confirmation</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Wireframe Node 4: Offer a Ride -->
+        <div class="screen-card transition-all duration-300 bg-white rounded-3xl border border-purple-100 shadow-sm p-5 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-3">
+              <span class="flow-badge px-2 py-0.5 bg-purple-100 text-brand-purple font-bold rounded-full">DRIVER PUBLISH</span>
+              <span class="text-[11px] font-mono text-slate-400">SCREEN_8</span>
+            </div>
+            <h3 class="text-base font-bold text-slate-900 mb-1">Offer a Ride (Bike / Car)</h3>
+            <p class="text-xs text-slate-500 mb-4">Pillion limit enforcement (1 Max for Bike), helmet compliance &amp; ₹ cost-cap.</p>
+            
+            <!-- Mini Wireframe Render -->
+            <div class="bg-slate-50 border border-slate-200/70 rounded-2xl p-3 space-y-2 text-xs">
+              <div class="bg-purple-100/70 p-2.5 rounded-xl border border-purple-200 flex justify-between items-center">
+                <span class="font-bold text-brand-purple text-[11px]">08:15 AM ±15 min</span>
+                <span class="text-[10px] bg-white px-2 py-0.5 rounded-full font-bold">5 Days/Wk</span>
+              </div>
+              <div class="bg-amber-100 border border-amber-200 p-2 rounded-xl">
+                <div class="text-[10px] font-bold text-amber-900">Ather 450X EV (Pillion: 1 Seat)</div>
+                <div class="text-[9px] text-amber-700">Spare ISI Helmet Toggle [ON]</div>
+              </div>
+              <div class="bg-white p-2 rounded-xl border border-slate-200 flex justify-between">
+                <span class="text-[10px] text-slate-500">Legal Expense Offset:</span>
+                <span class="text-[10px] font-bold text-slate-900">₹16 / seat</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+            <span class="text-slate-400 font-medium">Published to Corridor →</span>
+            <span class="px-2.5 py-1 bg-purple-50 text-brand-purple font-bold rounded-lg text-[11px]">RTO Verified</span>
+          </div>
+        </div>
+
+        <!-- Wireframe Node 5: Driver Request Management & Decline Modal -->
+        <div class="screen-card transition-all duration-300 bg-white rounded-3xl border border-purple-100 shadow-sm p-5 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-3">
+              <span class="flow-badge px-2 py-0.5 bg-indigo-100 text-indigo-700 font-bold rounded-full">HOST DISCRETION</span>
+              <span class="text-[11px] font-mono text-slate-400">SCREEN_24 &amp; 22</span>
+            </div>
+            <h3 class="text-base font-bold text-slate-900 mb-1">Request Queue &amp; Polite Decline</h3>
+            <p class="text-xs text-slate-500 mb-4">Accept student seats or decline politely with zero awkwardness.</p>
+            
+            <!-- Mini Wireframe Render -->
+            <div class="bg-slate-50 border border-slate-200/70 rounded-2xl p-3 space-y-2 text-xs">
+              <div class="bg-white p-2.5 rounded-xl border border-slate-200 flex justify-between items-center">
+                <div>
+                  <div class="font-bold text-slate-800 text-[11px]">Dev M. (Symbiosis '25)</div>
+                  <div class="text-[9px] text-slate-500">Deccan ➔ COEP Gate 3</div>
+                </div>
+                <div class="flex gap-1">
+                  <span class="px-2 py-1 bg-emerald-100 text-emerald-700 font-bold rounded text-[10px]">15 Connected User Journeys &amp; Campus Integrations</span>
+                  <span class="px-2 py-1 bg-slate-100 text-slate-600 font-bold rounded text-[10px]">Decline</span>
+                </div>
+              </div>
+              <div class="bg-indigo-50 border border-indigo-200 p-2 rounded-xl text-[10px]">
+                <span class="font-bold text-indigo-900 block">Polite Preset Triggered:</span>
+                <span class="text-indigo-700">"Car boot packed with project model today"</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+            <span class="text-slate-400 font-medium">Routes to Re-Booking or Alt →</span>
+            <span class="px-2.5 py-1 bg-indigo-50 text-indigo-700 font-bold rounded-lg text-[11px]">Preset Synced</span>
+          </div>
+        </div>
+
+        <!-- Wireframe Node 6: 1-Tap Re-Booking & Alternatives -->
+        <div class="screen-card transition-all duration-300 bg-white rounded-3xl border border-purple-100 shadow-sm p-5 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-3">
+              <span class="flow-badge px-2 py-0.5 bg-emerald-100 text-emerald-800 font-bold rounded-full">CONFIRMATION</span>
+              <span class="text-[11px] font-mono text-slate-400">SCREEN_18 &amp; 20</span>
+            </div>
+            <h3 class="text-base font-bold text-slate-900 mb-1">1-Tap Booking &amp; OTP Preview</h3>
+            <p class="text-xs text-slate-500 mb-4">Boarding PIN, calendar timetable sync and auto UPI pre-authorization.</p>
+            
+            <!-- Mini Wireframe Render -->
+            <div class="bg-slate-50 border border-slate-200/70 rounded-2xl p-3 space-y-2 text-xs">
+              <div class="bg-emerald-500 text-white p-2.5 rounded-xl flex justify-between items-center">
+                <div>
+                  <div class="font-bold text-[11px]">Seat Locked! OTP: 4092</div>
+                  <div class="text-[9px] opacity-90">Host Tanvi • Arriving 08:24 AM</div>
+                </div>
+                <div class="bg-white/20 px-2 py-1 rounded text-[10px] font-mono">₹32</div>
+              </div>
+              <div class="bg-white p-2 rounded-xl border border-slate-200 text-[10px] flex justify-between">
+                <span class="">Timetable Sync:</span>
+                <span class="font-bold text-purple-700">Added to Mechanics Lecture</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+            <span class="text-slate-400 font-medium">Triggers In-Transit State →</span>
+            <span class="px-2.5 py-1 bg-emerald-50 text-emerald-800 font-bold rounded-lg text-[11px]">Real-Time Active</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- FLOW ROW 3: Active Ride, Live Telemetry & Safety Net -->
+    <div>
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-8 h-8 rounded-full bg-rose-600 text-white flex items-center justify-center font-bold text-sm">C</div>
+        <h2 class="text-lg font-bold text-slate-900">Stage C: In-Transit Safe Corridor Telemetry &amp; Safety SOS</h2>
+        <span class="text-xs text-slate-400 font-mono">FLOW_DIR: Continuous Telemetry Loop (GPS + Accel + Audio)</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- Wireframe Node 7: Live Telemetry & Corridor Map -->
+        <div class="screen-card transition-all duration-300 bg-white rounded-3xl border border-purple-100 shadow-sm p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-3">
+              <span class="flow-badge px-2 py-0.5 bg-blue-100 text-blue-700 font-bold rounded-full">ACTIVE COMMUTE</span>
+              <span class="text-[11px] font-mono text-slate-400">SCREEN_4</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-1">Advanced Live Commute Telemetry</h3>
+            <p class="text-xs text-slate-500 mb-4">Campus safe-corridor navigation with real-time speed governor and road grip warnings.</p>
+            
+            <!-- Mini Wireframe Render -->
+            <div class="bg-slate-50 border border-slate-200/70 rounded-2xl p-4 space-y-3 text-xs">
+              <div class="bg-white p-3 rounded-xl border border-slate-200 flex justify-between items-center">
+                <div>
+                  <span class="text-[10px] text-slate-400 uppercase font-bold">Speed Monitored</span>
+                  <div class="text-sm font-black text-slate-800">32 km/h <span class="text-[11px] text-emerald-600 font-medium">(Cap: 40 km/h)</span></div>
+                </div>
+                <div class="px-2.5 py-1 bg-purple-100 text-brand-purple rounded-lg font-bold text-[11px]">
+                  Safe Corridor Active
+                </div>
+              </div>
+              <div class="grid grid-cols-3 gap-2 text-center text-[10px]">
+                <div class="bg-purple-50 p-2 rounded-lg font-bold text-purple-900">✓ Goodluck Passed</div>
+                <div class="bg-amber-100 p-2 rounded-lg font-bold text-amber-900">● Sambhaji (Now)</div>
+                <div class="bg-slate-100 p-2 rounded-lg font-bold text-slate-500">⚐ Gate 3 (08:34)</div>
+              </div>
+              <div class="bg-blue-50 border border-blue-200 p-2.5 rounded-xl flex items-center justify-between text-[11px]">
+                <span class="text-blue-900 font-medium">🌧️ Light Drizzle • Tire Grip Stable</span>
+                <span class="font-bold text-blue-700">DigiLocker Insured</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+            <span class="text-slate-400 font-medium">Detour or distress triggers →</span>
+            <span class="px-2.5 py-1 bg-rose-50 text-rose-700 font-bold rounded-lg text-[11px]">SOS Intercom Linked</span>
+          </div>
+        </div>
+
+        <!-- Wireframe Node 8: Safety SOS & Audio Guard -->
+        <div class="screen-card transition-all duration-300 bg-white rounded-3xl border border-rose-100 shadow-sm p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-3">
+              <span class="flow-badge px-2 py-0.5 bg-rose-100 text-rose-700 font-bold rounded-full">CAMPUS SAFETY SHIELD</span>
+              <span class="text-[11px] font-mono text-slate-400">SCREEN_12</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-1">Campus Safety SOS &amp; Live Audio-Check</h3>
+            <p class="text-xs text-slate-500 mb-4">Fail-safe 3-second SOS, discreet haptics, and DPDP-compliant on-device stress acoustic detection.</p>
+            
+            <!-- Mini Wireframe Render -->
+            <div class="bg-slate-50 border border-slate-200/70 rounded-2xl p-4 space-y-3 text-xs">
+              <div class="flex items-center justify-center p-3 bg-rose-50 rounded-xl border border-rose-200">
+                <div class="w-14 h-14 rounded-full bg-rose-600 text-white font-black flex flex-col items-center justify-center shadow-md shadow-rose-300 text-xs">
+                  <span class="">SOS</span>
+                  <span class="text-[8px] font-mono">HOLD 3S</span>
+                </div>
+                <div class="ml-4 text-left">
+                  <div class="text-[11px] font-bold text-rose-950">Pune Police 112 &amp; COEP Patrol</div>
+                  <div class="text-[10px] text-rose-700 mt-0.5">Discreet Haptic Trigger [ON]</div>
+                </div>
+              </div>
+              <div class="bg-purple-50 p-2.5 rounded-xl border border-purple-200 text-[10px]">
+                <div class="flex justify-between items-center font-bold text-purple-900 mb-1">
+                  <span class="">🎙️ On-Device Acoustic AI Guard</span>
+                  <span class="text-emerald-700">Status: Normal</span>
+                </div>
+                <span class="text-purple-600 text-[9px] block">No unprompted cloud upload • 24hr auto-purge under India DPDP Act 2023</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+            <span class="text-slate-400 font-medium">Ride Arrival at Campus Gate →</span>
+            <span class="px-2.5 py-1 bg-emerald-50 text-emerald-800 font-bold rounded-lg text-[11px]">Auto-Arrival Settlement</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- FLOW ROW 4: Arrival, Peer Ledger & Driver Payout -->
+    <div>
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-8 h-8 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-sm">D</div>
+        <h2 class="text-lg font-bold text-slate-900">Stage D: Auto-Arrival Settlement, Peer Praise &amp; Driver Ledger</h2>
+        <span class="text-xs text-slate-400 font-mono">FLOW_DIR: Rider Settlement ⇄ Host Bank Reconciliation</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- Wireframe Node 9: Trip Receipt & Peer Rating -->
+        <div class="screen-card transition-all duration-300 bg-white rounded-3xl border border-purple-100 shadow-sm p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-3">
+              <span class="flow-badge px-2 py-0.5 bg-emerald-100 text-emerald-700 font-bold rounded-full">15 Connected User Journeys &amp; Campus Integrations</span>
+              <span class="text-[11px] font-mono text-slate-400">SCREEN_16</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-1">Trip Receipt &amp; Campus Praise</h3>
+            <p class="text-xs text-slate-500 mb-4">Auto-settled UPI cost-sharing (₹32.00), cutting chai perks and recurring booking.</p>
+            
+            <!-- Mini Wireframe Render -->
+            <div class="bg-slate-50 border border-slate-200/70 rounded-2xl p-4 space-y-3 text-xs">
+              <div class="bg-amber-400 text-slate-900 p-3 rounded-xl">
+                <div class="flex justify-between items-center">
+                  <span class="font-bold text-sm">₹32.00 Auto-Settled</span>
+                  <span class="text-[10px] bg-white/30 px-2 py-0.5 rounded font-bold">Zero Platform Fee</span>
+                </div>
+                <div class="text-[10px] mt-1 opacity-90">Host Tanvi • 8 mins early for 08:45 AM lecture</div>
+              </div>
+              <div class="flex flex-wrap gap-1.5 text-[10px]">
+                <span class="px-2 py-1 bg-purple-100 text-brand-purple rounded-md font-bold">⚡ Smooth EV Drive</span>
+                <span class="px-2 py-1 bg-purple-100 text-brand-purple rounded-md font-bold">⏱️ Punctual</span>
+                <span class="px-2 py-1 bg-amber-100 text-amber-900 rounded-md font-bold">+₹10 Cutting Chai</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+            <span class="text-slate-400 font-medium">Reconciles to Driver Ledger →</span>
+            <span class="px-2.5 py-1 bg-emerald-50 text-emerald-800 font-bold rounded-lg text-[11px]">Instant UPI Direct</span>
+          </div>
+        </div>
+
+        <!-- Wireframe Node 10: Driver Payout & Non-Profit Compliance -->
+        <div class="screen-card transition-all duration-300 bg-white rounded-3xl border border-purple-100 shadow-sm p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-3">
+              <span class="flow-badge px-2 py-0.5 bg-purple-100 text-brand-purple font-bold rounded-full">DRIVER LEDGER</span>
+              <span class="text-[11px] font-mono text-slate-400">SCREEN_14</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-1">Driver Earnings &amp; Statutory Cap</h3>
+            <p class="text-xs text-slate-500 mb-4">Non-commercial carpool ledger (₹1,248 recovered / ₹2,100 legal cap) + COEP parking pass.</p>
+            
+            <!-- Mini Wireframe Render -->
+            <div class="bg-slate-50 border border-slate-200/70 rounded-2xl p-4 space-y-3 text-xs">
+              <div class="bg-purple-100/70 border border-purple-200 p-3 rounded-xl flex justify-between items-center">
+                <div>
+                  <div class="text-[10px] text-purple-700 font-bold uppercase">Weekly Fuel Recovery</div>
+                  <div class="text-base font-black text-brand-purple">₹1,248.00</div>
+                </div>
+                <div class="text-right text-[10px]">
+                  <span class="text-slate-600 block">8 of 14 weekly rides</span>
+                  <span class="text-emerald-700 font-bold">100% Tax-Exempt</span>
+                </div>
+              </div>
+              <div class="bg-white p-2.5 rounded-xl border border-slate-200 flex justify-between items-center text-[10px]">
+                <span class="font-bold text-slate-700">Campus Host Privilege Unlocked:</span>
+                <span class="px-2 py-0.5 bg-amber-100 text-amber-900 font-bold rounded">COEP Free EV Charging Bay 4</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+            <span class="text-slate-400 font-medium">Audit Documentation →</span>
+            <span class="px-2.5 py-1 bg-purple-50 text-brand-purple font-bold rounded-lg text-[11px]">Download Ledger PDF</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Complete State Machine Matrix Table -->
+    <div><div class="flex items-center gap-3 mb-4"><div class="w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-sm">E</div><h2 class="text-lg font-bold text-slate-900">Stage E: Recurring Commute Circles &amp; Semester Timetable Sync</h2><span class="text-xs text-slate-400 font-mono">FLOW_DIR: Academic ERP ⇄ Recurring Peer Pool</span></div><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div class="screen-card transition-all duration-300 bg-white rounded-3xl border border-purple-100 shadow-sm p-6 flex flex-col justify-between"><div><div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-3"><span class="flow-badge px-2 py-0.5 bg-indigo-100 text-indigo-700 font-bold rounded-full">TIMETABLE AUTOMATION</span><span class="text-[11px] font-mono text-slate-400">SCREEN_26</span></div><h3 class="text-lg font-bold text-slate-900 mb-1">Academic Timetable Auto-Sync</h3><p class="text-xs text-slate-500 mb-4">Sync COEP MIS calendar once. Scoot predicts weekly recurring rides and matches lab peers.</p><div class="bg-slate-50 border border-slate-200/70 rounded-2xl p-4 space-y-3 text-xs"><div class="bg-white p-3 rounded-xl border border-slate-200 flex justify-between items-center"><div><span class="text-[10px] text-slate-400 uppercase font-bold">Synced MIS Feed</span><div class="text-sm font-bold text-slate-900">Fluid Mechanics Lab (08:30 AM)</div></div><span class="px-2.5 py-1 bg-emerald-100 text-emerald-700 rounded-lg font-bold text-[11px]">Mon, Wed, Fri Auto-Match</span></div><div class="bg-indigo-50 border border-indigo-200 p-2.5 rounded-xl flex items-center justify-between"><span class="text-[11px] text-indigo-900 font-medium">Recurring Pool: Tanvi D. (Tiago EV)</span><span class="font-bold text-indigo-700 text-xs">Locked for Term</span></div></div></div><div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs"><span class="text-slate-400 font-medium">Eliminates Daily Search →</span><span class="px-2.5 py-1 bg-indigo-50 text-indigo-700 font-bold rounded-lg text-[11px]">Zero Friction Loop</span></div></div><div class="screen-card transition-all duration-300 bg-white rounded-3xl border border-purple-100 shadow-sm p-6 flex flex-col justify-between"><div><div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-3"><span class="flow-badge px-2 py-0.5 bg-purple-100 text-brand-purple font-bold rounded-full">COMMUTE CIRCLE</span><span class="text-[11px] font-mono text-slate-400">SCREEN_28</span></div><h3 class="text-lg font-bold text-slate-900 mb-1">Department &amp; Hostel Micro-Circles</h3><p class="text-xs text-slate-500 mb-4">Restricted micro-circles for Mechanical '25 or Girls Hostel 2 with verified trust covenants.</p><div class="bg-slate-50 border border-slate-200/70 rounded-2xl p-4 space-y-3 text-xs"><div class="bg-purple-100/70 p-3 rounded-xl border border-purple-200 flex justify-between items-center"><div><div class="text-[11px] font-bold text-brand-purple">Hostel 2 ⇄ North Campus Pod</div><div class="text-[9px] text-purple-700">18 Members • 100% Female Verified</div></div><span class="bg-white px-2 py-0.5 rounded text-[10px] font-bold text-brand-purple">Active Pod</span></div><div class="bg-white p-2.5 rounded-xl border border-slate-200 flex justify-between items-center text-[10px]"><span class="text-slate-600">Automatic Fair-Cost Split:</span><span class="font-bold text-slate-900">Rotational Fuel Wallet</span></div></div></div><div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs"><span class="text-slate-400 font-medium">Connects to Rendezvous →</span><span class="px-2.5 py-1 bg-purple-50 text-brand-purple font-bold rounded-lg text-[11px]">Trusted Circle Vetted</span></div></div></div></div><div><div class="flex items-center gap-3 mb-4"><div class="w-8 h-8 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold text-sm">F</div><h2 class="text-lg font-bold text-slate-900">Stage F: Zero-PII Rendezvous &amp; Night Shield Escort</h2><span class="text-xs text-slate-400 font-mono">FLOW_DIR: Gate Geofence ⇄ Ephemeral Voice Token</span></div><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div class="screen-card transition-all duration-300 bg-white rounded-3xl border border-purple-100 shadow-sm p-6 flex flex-col justify-between"><div><div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-3"><span class="flow-badge px-2 py-0.5 bg-blue-100 text-blue-700 font-bold rounded-full">PRIVACY GATE</span><span class="text-[11px] font-mono text-slate-400">SCREEN_30</span></div><h3 class="text-lg font-bold text-slate-900 mb-1">Zero-PII Gate Rendezvous Intercom</h3><p class="text-xs text-slate-500 mb-4">Ephemeral push-to-talk voice channel without exchanging student mobile numbers or socials.</p><div class="bg-slate-50 border border-slate-200/70 rounded-2xl p-4 space-y-3 text-xs"><div class="bg-white p-3 rounded-xl border border-slate-200 flex justify-between items-center"><div><div class="text-[10px] text-slate-400 uppercase font-bold">Designated Pickup Point</div><div class="text-sm font-bold text-slate-800">COEP Gate 3 (Boat Club Turn)</div></div><span class="px-2 py-1 bg-amber-100 text-amber-900 rounded-md font-bold text-[10px]">Geo-Beacon Lock</span></div><div class="bg-blue-50 border border-blue-200 p-2.5 rounded-xl flex items-center justify-between text-[11px]"><span class="text-blue-900 font-medium">🎙️ Masked PTT Intercom</span><span class="text-blue-700 font-bold">Auto-Destructs at Ride Start</span></div></div></div><div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs"><span class="text-slate-400 font-medium">Zero Personal Data Exposure →</span><span class="px-2.5 py-1 bg-blue-50 text-blue-700 font-bold rounded-lg text-[11px]">DPDP Compliant</span></div></div><div class="screen-card transition-all duration-300 bg-white rounded-3xl border border-rose-100 shadow-sm p-6 flex flex-col justify-between"><div><div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-3"><span class="flow-badge px-2 py-0.5 bg-rose-100 text-rose-700 font-bold rounded-full">LATE NIGHT PROTOCOL</span><span class="text-[11px] font-mono text-slate-400">SCREEN_32</span></div><h3 class="text-lg font-bold text-slate-900 mb-1">Night Shield &amp; Stationary Anomaly Guard</h3><p class="text-xs text-slate-500 mb-4">Automatic 45-second stationary timer for night rides (&gt;8:30 PM) with campus marshal live ping.</p><div class="bg-slate-50 border border-slate-200/70 rounded-2xl p-4 space-y-3 text-xs"><div class="bg-rose-50 border border-rose-200 p-3 rounded-xl flex justify-between items-center"><div><div class="text-[11px] font-bold text-rose-950">Night Shield Mode [ACTIVE]</div><div class="text-[9px] text-rose-700">Auto-Notifies Hostel Warden &amp; Guard</div></div><span class="w-3 h-3 bg-rose-600 rounded-full animate-ping"></span></div><div class="bg-white p-2.5 rounded-xl border border-slate-200 flex justify-between items-center text-[10px]"><span class="text-slate-600">45s Stationary Auto-Escalation:</span><span class="font-bold text-rose-600">Zero False-Alert Haptic Check</span></div></div></div><div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs"><span class="text-slate-400 font-medium">Escalates to Marshal Portal →</span><span class="px-2.5 py-1 bg-rose-50 text-rose-700 font-bold rounded-lg text-[11px]">COEP Control Link</span></div></div></div></div><div><div class="flex items-center gap-3 mb-4"><div class="w-8 h-8 rounded-full bg-blue-700 text-white flex items-center justify-center font-bold text-sm">G</div><h2 class="text-lg font-bold text-slate-900">Stage G: Campus Security &amp; Marshal Command Console</h2><span class="text-xs text-slate-400 font-mono">FLOW_DIR: University Safety Desk ⇄ Active Transit Telemetry</span></div><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div class="screen-card transition-all duration-300 bg-white rounded-3xl border border-purple-100 shadow-sm p-6 flex flex-col justify-between"><div><div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-3"><span class="flow-badge px-2 py-0.5 bg-blue-100 text-blue-700 font-bold rounded-full">MARSHAL COMMAND</span><span class="text-[11px] font-mono text-slate-400">SCREEN_34</span></div><h3 class="text-lg font-bold text-slate-900 mb-1">Campus Marshal Incident Dispatch</h3><p class="text-xs text-slate-500 mb-4">Web command center for campus security officers showing active corridor vehicles and panic alerts.</p><div class="bg-slate-50 border border-slate-200/70 rounded-2xl p-4 space-y-3 text-xs"><div class="bg-white p-3 rounded-xl border border-slate-200 flex justify-between items-center"><div><div class="text-[10px] text-slate-400 uppercase font-bold">Active Monitored Corridor</div><div class="text-sm font-bold text-slate-800">142 COEP Peer Rides Live</div></div><span class="px-2 py-1 bg-emerald-100 text-emerald-700 rounded-md font-bold text-[10px]">Corridor Clear</span></div><div class="bg-purple-50 border border-purple-200 p-2.5 rounded-xl flex justify-between items-center text-[10px]"><span class="text-purple-900 font-medium">EV Bay 4 Reservation Sync:</span><span class="font-bold text-brand-purple">3 Host Slots Reserved</span></div></div></div><div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs"><span class="text-slate-400 font-medium">Broadcasts Campus Notice →</span><span class="px-2.5 py-1 bg-blue-50 text-blue-700 font-bold rounded-lg text-[11px]">Institutional Guard</span></div></div><div class="screen-card transition-all duration-300 bg-white rounded-3xl border border-emerald-100 shadow-sm p-6 flex flex-col justify-between"><div><div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-3"><span class="flow-badge px-2 py-0.5 bg-emerald-100 text-emerald-800 font-bold rounded-full">SUSTAINABILITY AUDIT</span><span class="text-[11px] font-mono text-slate-400">SCREEN_36</span></div><h3 class="text-lg font-bold text-slate-900 mb-1">COEP Net-Zero &amp; Traffic Audit Portal</h3><p class="text-xs text-slate-500 mb-4">University-level carbon offset metrics, two-wheeler congestion reductions, and shared mobility credits.</p><div class="bg-slate-50 border border-slate-200/70 rounded-2xl p-4 space-y-3 text-xs"><div class="bg-emerald-500 text-white p-3 rounded-xl flex justify-between items-center"><div><div class="text-[10px] opacity-80 uppercase font-bold">Monthly CO₂ Avoided</div><div class="text-base font-black">3,840 kg CO₂e</div></div><span class="bg-white/20 px-2 py-1 rounded text-[10px] font-bold">NAAC Grade A+ Audit Ready</span></div><div class="bg-white p-2.5 rounded-xl border border-slate-200 flex justify-between items-center text-[10px]"><span class="text-slate-600">Gate 3 Congestion Relief:</span><span class="font-bold text-emerald-700">-38% Peak Parking Load</span></div></div></div><div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs"><span class="text-slate-400 font-medium">Reports to Syndicate →</span><span class="px-2.5 py-1 bg-emerald-50 text-emerald-800 font-bold rounded-lg text-[11px]">Annual ESG Export</span></div></div></div></div><div class="bg-white rounded-3xl border border-purple-100 shadow-sm p-6 md:p-8">
+      <div class="flex items-center justify-between mb-6">
+        <div>
+          <h3 class="text-xl font-bold text-slate-900">Scoot System State-Machine &amp; Routing Matrix</h3>
+          <p class="text-xs text-slate-500 mt-1">Formal edge transitions connecting all screens and safety conditions.</p>
+        </div>
+        <span class="px-3 py-1 bg-purple-100 text-brand-purple font-mono font-bold text-xs rounded-full">STATE_MACHINE v2.4</span>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs">
+          <thead>
+            <tr class="border-b border-purple-100 text-slate-400 uppercase tracking-wider font-mono text-[10px]">
+              <th class="py-3 px-3">State ID</th>
+              <th class="py-3 px-3">Current Screen</th>
+              <th class="py-3 px-3">User Action / Trigger</th>
+              <th class="py-3 px-3">Next Screen Target</th>
+              <th class="py-3 px-3">Verification / Security Check</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 text-slate-700">
+            <tr>
+              <td class="py-3 px-3 font-mono font-bold text-brand-purple">S01</td>
+              <td class="py-3 px-3 font-semibold">Student Verification Passport (SCREEN_6)</td>
+              <td class="py-3 px-3">DigiLocker Aadhaar &amp; @coep.ac.in Verified</td>
+              <td class="py-3 px-3 text-slate-900 font-medium">Route Discovery (SCREEN_10)</td>
+              <td class="py-3 px-3 text-emerald-600 font-bold">AISHE Token Active</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-3 font-mono font-bold text-brand-purple">S02</td>
+              <td class="py-3 px-3 font-semibold">Route Discovery (SCREEN_10)</td>
+              <td class="py-3 px-3">Tap Tanvi's Profile or Yash's Bike Match</td>
+              <td class="py-3 px-3 text-slate-900 font-medium">Mutual Student Trust Profile (SCREEN_2)</td>
+              <td class="py-3 px-3 text-purple-600 font-medium">Mutual Peer Graph (8 Mutuals)</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-3 font-mono font-bold text-brand-purple">S03</td>
+              <td class="py-3 px-3 font-semibold">Offer a Ride (SCREEN_8)</td>
+              <td class="py-3 px-3">Host Publishes 08:15 AM Deccan ➔ COEP</td>
+              <td class="py-3 px-3 text-slate-900 font-medium">Driver Request Management (SCREEN_24)</td>
+              <td class="py-3 px-3 text-blue-600 font-medium">RTO Non-Commercial Cap (₹16/₹32)</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-3 font-mono font-bold text-brand-purple">S04</td>
+              <td class="py-3 px-3 font-semibold">Driver Request Management (SCREEN_24)</td>
+              <td class="py-3 px-3">Host clicks "Decline Request"</td>
+              <td class="py-3 px-3 text-slate-900 font-medium">Decline Preset Bottom Sheet (SCREEN_22)</td>
+              <td class="py-3 px-3 text-amber-600 font-medium">Zero-Penalty Polite Reason</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-3 font-mono font-bold text-brand-purple">S05</td>
+              <td class="py-3 px-3 font-semibold">Decline Preset Bottom Sheet (SCREEN_22)</td>
+              <td class="py-3 px-3">Send Polite Decline to Rider</td>
+              <td class="py-3 px-3 text-slate-900 font-medium">Rider Alternative Matches (SCREEN_20)</td>
+              <td class="py-3 px-3 text-purple-600 font-medium">Auto-Suggests Yash K. (Bike)</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-3 font-mono font-bold text-brand-purple">S06</td>
+              <td class="py-3 px-3 font-semibold">Mutual Trust Profile (SCREEN_2)</td>
+              <td class="py-3 px-3">Tap "Ride with Tanvi" (₹32)</td>
+              <td class="py-3 px-3 text-slate-900 font-medium">1-Tap Booking &amp; OTP Preview (SCREEN_18)</td>
+              <td class="py-3 px-3 text-emerald-600 font-bold">Seat Locked, Auto-Split UPI Ready</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-3 font-mono font-bold text-brand-purple">S07</td>
+              <td class="py-3 px-3 font-semibold">1-Tap Booking (SCREEN_18)</td>
+              <td class="py-3 px-3">Trip Commences (OTP verified at pickup)</td>
+              <td class="py-3 px-3 text-slate-900 font-medium">Live Commute Telemetry (SCREEN_4)</td>
+              <td class="py-3 px-3 text-purple-600 font-medium">Speed Cap (40km/h) + Route Shield</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-3 font-mono font-bold text-brand-purple">S08</td>
+              <td class="py-3 px-3 font-semibold">Live Commute Telemetry (SCREEN_4)</td>
+              <td class="py-3 px-3">Detour Detected or Tap SOS</td>
+              <td class="py-3 px-3 text-slate-900 font-medium">Campus Safety SOS (SCREEN_12)</td>
+              <td class="py-3 px-3 text-rose-600 font-bold">Pune 112 &amp; COEP Patrol Beacon</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-3 font-mono font-bold text-brand-purple">S09</td>
+              <td class="py-3 px-3 font-semibold">Live Commute Telemetry (SCREEN_4)</td>
+              <td class="py-3 px-3">Vehicle arrives at COEP Gate 3 Geofence</td>
+              <td class="py-3 px-3 text-slate-900 font-medium">Trip Receipt &amp; Rating (SCREEN_16)</td>
+              <td class="py-3 px-3 text-emerald-600 font-bold">UPI Auto-Settlement Triggered</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-3 font-mono font-bold text-brand-purple">S10</td>
+              <td class="py-3 px-3 font-semibold">Trip Receipt &amp; Rating (SCREEN_16)</td>
+              <td class="py-3 px-3">Rating Submitted &amp; Funds Reconciled</td>
+              <td class="py-3 px-3 text-slate-900 font-medium">Driver Payout Ledger (SCREEN_14)</td>
+              <td class="py-3 px-3 text-blue-600 font-medium">Maharashtra Shared Transit Cap Check</td>
+            </tr>
+          <tr><td class="py-3 px-3 font-mono font-bold text-brand-purple">S11</td><td class="py-3 px-3 font-semibold">Timetable Auto-Sync (SCREEN_26)</td><td class="py-3 px-3">MIS Calendar Import &amp; Schedule Lock</td><td class="py-3 px-3 text-slate-900 font-medium">Commute Circle Pods (SCREEN_28)</td><td class="py-3 px-3 text-emerald-600 font-bold">Weekly Auto-Matching Enabled</td></tr><tr><td class="py-3 px-3 font-mono font-bold text-brand-purple">S12</td><td class="py-3 px-3 font-semibold">Rider Booking Confirmed (SCREEN_18)</td><td class="py-3 px-3">Host Approaching Designated Gate Geofence</td><td class="py-3 px-3 text-slate-900 font-medium">Zero-PII Gate Intercom (SCREEN_30)</td><td class="py-3 px-3 text-blue-600 font-medium">Masked PTT Audio Token Active</td></tr><tr><td class="py-3 px-3 font-mono font-bold text-brand-purple">S13</td><td class="py-3 px-3 font-semibold">Live Commute Telemetry (SCREEN_4)</td><td class="py-3 px-3">Ride Active Post-20:30 Campus Curfew</td><td class="py-3 px-3 text-slate-900 font-medium">Night Shield Mode (SCREEN_32)</td><td class="py-3 px-3 text-rose-600 font-bold">Stationary 45s Auto-Ping Armed</td></tr><tr><td class="py-3 px-3 font-mono font-bold text-brand-purple">S14</td><td class="py-3 px-3 font-semibold">Campus Safety SOS (SCREEN_12)</td><td class="py-3 px-3">Distress Confirmed or Acoustic Stress Alert</td><td class="py-3 px-3 text-slate-900 font-medium">Marshal Command Console (SCREEN_34)</td><td class="py-3 px-3 text-rose-600 font-bold">COEP Patrol &amp; Police 112 Beacon Dispatched</td></tr><tr><td class="py-3 px-3 font-mono font-bold text-brand-purple">S15</td><td class="py-3 px-3 font-semibold">Driver Payout Ledger (SCREEN_14)</td><td class="py-3 px-3">End-of-Month Institutional Reconciliation</td><td class="py-3 px-3 text-slate-900 font-medium">COEP Net-Zero &amp; ESG Portal (SCREEN_36)</td><td class="py-3 px-3 text-emerald-600 font-bold">EV Bay 4 Credit &amp; NAAC Carbon Offset Logged</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+
+</body></html>

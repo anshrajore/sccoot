@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>SCOOT — Daily Commute &amp; Mobility Dashboard</title>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandCanvas: '#E9E4F8',
+            phoneBg: '#FFFFFF',
+            accentPurple: '#A482FC',
+            accentAmber: '#FFB843',
+            accentBlue: '#A8CCFF',
+            accentPink: '#FFA1DE',
+            navDark: '#0D111D',
+          },
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', '"Segoe UI"', 'Roboto', 'sans-serif'],
+          },
+          boxShadow: {
+            'device': '0 25px 60px -15px rgba(80, 56, 150, 0.28), 0 0 0 10px #2D2738',
+            'pill': '0 6px 16px -2px rgba(164, 130, 252, 0.35)',
+            'nav': '0 12px 28px rgba(13, 17, 29, 0.28)',
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom Styles -->
+<style data-purpose="custom-layout">
+    body {
+      background: radial-gradient(circle at 50% 20%, #EDE8FC 0%, #DCD4F3 100%);
+      font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      -webkit-tap-highlight-color: transparent;
+    }
+    /* Hide scrollbars smoothly across browser engines */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style data-purpose="3d-decorations">
+    /* Pseudo-3D Geometric Sculptural Styling mimicking the reference */
+    .shape-cylinder-orange {
+      background: linear-gradient(135deg, #FF9933 0%, #FF6200 65%, #C94600 100%);
+      box-shadow: -8px 10px 18px rgba(184, 69, 0, 0.4), inset 2px -4px 6px rgba(0, 0, 0, 0.3), inset -2px 3px 6px rgba(255, 255, 255, 0.6);
+    }
+    .shape-cylinder-donut {
+      border: 14px solid #FF9800;
+      box-shadow: -6px 8px 16px rgba(160, 60, 0, 0.35), inset 3px 3px 6px rgba(255, 255, 255, 0.4);
+    }
+    .shape-cube-slate {
+      background: linear-gradient(145deg, #A4A1B8 0%, #68657B 60%, #464354 100%);
+      box-shadow: -10px 12px 20px rgba(45, 42, 60, 0.35), inset 2px 2px 4px rgba(255, 255, 255, 0.5);
+    }
+    .shape-sphere-yellow {
+      background: radial-gradient(circle at 35% 30%, #FFF176 0%, #FBC02D 50%, #E65100 100%);
+      box-shadow: -6px 8px 14px rgba(170, 90, 0, 0.35);
+    }
+    .shape-pedestal-3d {
+      background: radial-gradient(circle at 35% 30%, #FFE9D6 0%, #F5C6A5 60%, #C98B64 100%);
+      box-shadow: -6px 8px 14px rgba(130, 80, 50, 0.3);
+    }
+    .shape-ribbed-sphere {
+      background: radial-gradient(circle at 35% 30%, #639893 0%, #2D5854 80%);
+      box-shadow: -5px 6px 12px rgba(25, 60, 55, 0.35);
+    }
+  </style>
+<!-- END: Custom Styles -->
+</head>
+<body class="min-h-screen flex items-center justify-center p-0 md:p-6 lg:p-8 font-sans antialiased select-none text-slate-800">
+<!-- BEGIN: Mobile Device Frame -->
+<main class="relative w-full max-w-[412px] h-[892px] bg-white md:rounded-[52px] shadow-device overflow-hidden flex flex-col justify-between border-[6px] md:border-[10px] border-[#1C1726]" data-purpose="mobile-device-container">
+<!-- BEGIN: Top Status Bar & Dynamic Island -->
+<header class="w-full pt-3 px-7 flex items-center justify-between z-30 shrink-0" data-purpose="ios-status-bar">
+<!-- Time -->
+<span class="text-sm font-semibold tracking-tight text-slate-900 ml-1">9:41</span>
+<!-- Dynamic Island / Pill Cutout -->
+<div class="h-[26px] w-[98px] bg-black rounded-full flex items-center justify-end pr-2.5 space-x-1.5 shadow-inner">
+<div class="w-2.5 h-2.5 rounded-full bg-[#171725] border border-neutral-800"></div>
+<div class="w-2 h-2 rounded-full bg-[#0d2a1b]"></div>
+</div>
+<!-- Network & Battery Icons -->
+<div class="flex items-center space-x-1.5 text-slate-900 pr-1">
+<!-- Cellular Signal Icon -->
+<svg class="w-4 h-4 fill-current" viewbox="0 0 24 24">
+<path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 18.25A10.93 10.93 0 0 1 1 12C1 5.92 5.92 1 12 1s11 4.92 11 11c0 2.38-.76 4.59-2.06 6.39l-.62-.62A9.94 9.94 0 0 0 22 12c0-4.97-4.03-9-10-9zM2 20h20v2H2z" opacity="0.1"></path>
+<rect height="5" rx="0.75" width="3" x="2" y="16"></rect>
+<rect height="9" rx="0.75" width="3" x="7" y="12"></rect>
+<rect height="13" rx="0.75" width="3" x="12" y="8"></rect>
+<rect height="17" rx="0.75" width="3" x="17" y="4"></rect>
+</svg>
+<!-- Wifi Icon -->
+<svg class="w-3.5 h-3.5 fill-current" viewbox="0 0 24 24">
+<path d="M12 4C7.31 4 3.07 5.9 0 8.98L12 21 24 8.98C20.93 5.9 16.69 4 12 4z"></path>
+</svg>
+<!-- Battery Icon -->
+<div class="w-5 h-2.5 border border-slate-900 rounded-[3px] p-[1px] flex items-center">
+<div class="h-full w-full bg-slate-900 rounded-[1.5px]"></div>
+</div>
+</div>
+</header>
+<!-- END: Top Status Bar & Dynamic Island -->
+<!-- BEGIN: Scrollable Content Container -->
+<div class="flex-1 overflow-y-auto no-scrollbar px-6 pt-2 pb-24 flex flex-col space-y-4" data-purpose="screen-content">
+<!-- BEGIN: Header Profile & Greeting -->
+<section class="flex items-center justify-between pt-1" data-purpose="user-header">
+<!-- User Avatar with Verified Campus Ring -->
+<div class="relative">
+<div class="w-11 h-11 rounded-full p-[2px] bg-gradient-to-tr from-amber-400 via-pink-500 to-indigo-500 shadow-sm flex items-center justify-center">
+<div class="w-full h-full rounded-full overflow-hidden bg-slate-200">
+<!-- Visual avatar representation -->
+<svg class="w-full h-full text-slate-700 bg-amber-100" fill="currentColor" viewbox="0 0 40 40">
+<circle cx="20" cy="15" fill="#F59E0B" r="9"></circle>
+<path d="M7 36 C7 28, 14 25, 20 25 C26 25, 33 28, 33 36 Z" fill="#4B5563"></path>
+<!-- Round spectacles -->
+<circle cx="16" cy="15" fill="none" r="3.5" stroke="#111827" stroke-width="1.5"></circle>
+<circle cx="24" cy="15" fill="none" r="3.5" stroke="#111827" stroke-width="1.5"></circle>
+<path d="M19.5 15 L20.5 15" stroke="#111827" stroke-width="1.5"></path>
+</svg>
+</div>
+</div>
+<!-- Campus AISHE badge dot -->
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-emerald-500 border-2 border-white rounded-full"></span>
+</div>
+<!-- Greeting Info -->
+<div class="text-center flex-1 px-3">
+<div class="flex items-center justify-center space-x-1">
+<h1 class="text-base font-bold tracking-tight text-slate-900 leading-tight">Hello, Aarav</h1>
+<span class="inline-flex items-center px-1.5 py-0.2 text-[9px] font-semibold bg-violet-100 text-violet-700 rounded-full">COEP</span>
+</div>
+<p class="text-xs text-slate-400 font-medium">Today 25 Nov. • Pune Corridor</p>
+</div>
+<!-- Search Icon Button -->
+<button aria-label="Search Rides and Carpools" class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-700 hover:bg-slate-50 transition active:scale-95 shadow-sm">
+<svg class="w-4 h-4 text-slate-600 stroke-2" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<circle cx="11" cy="11" r="7"></circle>
+<path d="M21 21l-4.35-4.35" stroke-linecap="round"></path>
+</svg>
+</button>
+</section>
+<!-- END: Header Profile & Greeting -->
+<!-- BEGIN: Hero Banner Card -->
+<section class="relative overflow-hidden rounded-[32px] bg-[#A482FC] p-5 text-white shadow-pill min-h-[175px] flex flex-col justify-between" data-purpose="hero-commute-banner">
+<!-- Content Container -->
+<div class="relative z-10 max-w-[62%]">
+<h2 class="text-2xl font-bold tracking-tight leading-tight text-slate-900">
+            Daily<br/>commute
+          </h2>
+<p class="text-[11px] font-medium text-slate-800/90 mt-1 leading-snug">
+            Lock your campus ride before 08:30 AM
+          </p>
+</div>
+<!-- Commuters Co-riders Avatars -->
+<div class="relative z-10 flex items-center space-x-[-8px] mt-3">
+<div class="w-7 h-7 rounded-full border-2 border-white bg-pink-300 flex items-center justify-center text-[10px] font-bold text-pink-900 shadow-sm">P</div>
+<div class="w-7 h-7 rounded-full border-2 border-white bg-indigo-300 flex items-center justify-center text-[10px] font-bold text-indigo-900 shadow-sm">R</div>
+<div class="w-7 h-7 rounded-full border-2 border-white bg-teal-300 flex items-center justify-center text-[10px] font-bold text-teal-900 shadow-sm">S</div>
+<div class="w-7 h-7 rounded-full border-2 border-white bg-[#423A5E] text-white flex items-center justify-center text-[10px] font-semibold tracking-tighter shadow-sm">+4</div>
+<span class="ml-3 text-[10px] font-semibold text-slate-800 tracking-wide">COEP Hub</span>
+</div>
+<!-- 3D Geometric Composition (Accurately mirrors image.png) -->
+<div class="absolute -right-3 -top-2 w-48 h-full pointer-events-none select-none z-0" data-purpose="3d-sculptural-illustration">
+<!-- Top Orange 3D Ring/Torus -->
+<div class="absolute right-7 top-4 w-16 h-16 rounded-full shape-cylinder-donut rotate-12 transform"></div>
+<!-- Slate 3D Rounded Cube Core -->
+<div class="absolute right-14 top-11 w-14 h-14 rounded-2xl shape-cube-slate -rotate-12 transform"></div>
+<!-- Dark Cylinder Element -->
+<div class="absolute right-4 top-14 w-12 h-16 rounded-3xl shape-cube-slate rotate-45 transform opacity-90"></div>
+<!-- Vibrant Yellow Torus/Sphere -->
+<div class="absolute right-14 top-24 w-11 h-11 rounded-full shape-sphere-yellow"></div>
+<!-- Metallic Base Cylinder -->
+<div class="absolute right-6 top-24 w-14 h-12 rounded-2xl shape-cylinder-orange rotate-6 transform"></div>
+</div>
+</section>
+<!-- END: Hero Banner Card -->
+<!-- BEGIN: Weekly Horizontal Calendar Strip -->
+<section class="bg-white rounded-full py-2 px-2.5 flex items-center justify-between border border-slate-100 shadow-sm" data-purpose="weekly-calendar-strip">
+<!-- Sun 22 -->
+<div class="flex flex-col items-center justify-center w-11 py-1 rounded-2xl text-slate-400">
+<span class="text-[10px] font-medium">Sun</span>
+<span class="text-xs font-semibold text-slate-600 mt-0.5">22</span>
+</div>
+<!-- Mon 23 -->
+<div class="flex flex-col items-center justify-center w-11 py-1 rounded-2xl text-slate-400">
+<span class="text-[10px] font-medium">Mon</span>
+<span class="text-xs font-semibold text-slate-600 mt-0.5">23</span>
+</div>
+<!-- Tue 24 -->
+<div class="flex flex-col items-center justify-center w-11 py-1 rounded-2xl text-slate-400">
+<span class="text-[10px] font-medium">Tue</span>
+<span class="text-xs font-semibold text-slate-600 mt-0.5">24</span>
+</div>
+<!-- Wed 25 - Active Day Card -->
+<div class="flex flex-col items-center justify-center w-11 py-1.5 rounded-full bg-slate-900 text-white shadow-md relative">
+<!-- Top indicator dot -->
+<span class="w-1.5 h-1.5 rounded-full bg-white mb-0.5"></span>
+<span class="text-[10px] font-medium leading-none">Wed</span>
+<span class="text-xs font-bold mt-0.5 leading-none">25</span>
+</div>
+<!-- Thu 26 -->
+<div class="flex flex-col items-center justify-center w-11 py-1 rounded-2xl text-slate-400">
+<span class="w-1 h-1 rounded-full bg-slate-300 mb-0.5 opacity-60"></span>
+<span class="text-[10px] font-medium leading-none">Thu</span>
+<span class="text-xs font-semibold text-slate-600 mt-0.5 leading-none">26</span>
+</div>
+<!-- Fri 27 -->
+<div class="flex flex-col items-center justify-center w-11 py-1 rounded-2xl text-slate-400">
+<span class="w-1 h-1 rounded-full bg-slate-300 mb-0.5 opacity-60"></span>
+<span class="text-[10px] font-medium leading-none">Fri</span>
+<span class="text-xs font-semibold text-slate-600 mt-0.5 leading-none">27</span>
+</div>
+<!-- Sat 28 -->
+<div class="flex flex-col items-center justify-center w-11 py-1 rounded-2xl text-slate-400">
+<span class="w-1 h-1 rounded-full bg-slate-300 mb-0.5 opacity-60"></span>
+<span class="text-[10px] font-medium leading-none">Sat</span>
+<span class="text-xs font-semibold text-slate-600 mt-0.5 leading-none">28</span>
+</div>
+</section>
+<!-- END: Weekly Horizontal Calendar Strip -->
+<!-- BEGIN: Section Heading & Quick Toggle -->
+<section class="pt-1 flex items-center justify-between" data-purpose="section-header">
+<div>
+<h3 class="text-xl font-bold tracking-tight text-slate-900">Your plan</h3>
+<p class="text-[11px] text-slate-400">Confirmed carpools &amp; shuttles</p>
+</div>
+<!-- Mode switcher (Find / Offer) -->
+<div class="bg-slate-100 p-0.5 rounded-full flex text-[11px] font-semibold border border-slate-200/60">
+<button class="bg-white text-slate-900 px-2.5 py-1 rounded-full shadow-xs">Rider</button>
+<button class="text-slate-500 px-2 py-1 rounded-full hover:text-slate-800">Driver</button>
+</div>
+</section>
+<!-- END: Section Heading & Quick Toggle -->
+<!-- BEGIN: Asymmetric Cards Grid -->
+<section class="grid grid-cols-2 gap-3.5 pb-2 items-start" data-purpose="ride-cards-grid">
+<!-- Left Tall Card: Morning Commute (Amber/Gold) -->
+<article class="bg-[#FFB843] rounded-[30px] p-4 flex flex-col justify-between min-h-[295px] shadow-sm relative overflow-hidden">
+<!-- Top Tag Pill -->
+<div>
+<div class="inline-flex items-center px-3 py-1 rounded-full bg-white/40 backdrop-blur-sm text-[11px] font-semibold text-amber-950">
+              Verified Ride
+            </div>
+<!-- Route Details -->
+<div class="mt-4">
+<h4 class="text-lg font-bold text-slate-950 leading-tight">Symbiosis to COEP</h4>
+<div class="mt-2 space-y-0.5 text-[11px] text-amber-950 font-medium">
+<p>25 Nov.</p>
+<p class="font-bold">08:30–09:15</p>
+<p class="text-amber-900/80">Gate 3 Pickup</p>
+</div>
+</div>
+</div>
+<!-- Price & Distance Tag -->
+<div class="my-2 py-1 px-2.5 rounded-xl bg-amber-400/40 w-fit">
+<span class="text-xs font-bold text-slate-900">₹45</span>
+<span class="text-[10px] text-slate-800"> / seat (UPI Split)</span>
+</div>
+<!-- Driver Info at bottom -->
+<div class="flex items-center space-x-2.5 pt-2 border-t border-amber-900/10">
+<div class="w-8 h-8 rounded-full bg-white/80 overflow-hidden shrink-0 border border-amber-300 flex items-center justify-center">
+<span class="text-xs font-bold text-amber-900">RI</span>
+</div>
+<div class="leading-none overflow-hidden">
+<p class="text-[10px] text-amber-950/70 font-medium">Captain</p>
+<p class="text-xs font-bold text-slate-900 truncate">Rohan Iyer</p>
+<p class="text-[9px] text-amber-900 truncate">Hyundai Verna</p>
+</div>
+</div>
+</article>
+<!-- Right Column (Stacked Cards) -->
+<div class="flex flex-col space-y-3.5">
+<!-- Right Top Card: Evening Return Pool (Pastel Sky-Blue) -->
+<article class="bg-[#A8CCFF] rounded-[30px] p-4 relative min-h-[185px] flex flex-col justify-between overflow-hidden shadow-sm">
+<div>
+<!-- Pill Badge -->
+<div class="inline-flex items-center px-3 py-1 rounded-full bg-white/50 backdrop-blur-sm text-[11px] font-semibold text-blue-950">
+                Light Pool
+              </div>
+<!-- Content -->
+<div class="mt-2.5">
+<h4 class="text-base font-bold text-slate-950 leading-tight">Return Pool</h4>
+<div class="mt-1 space-y-0.5 text-[11px] text-blue-950 font-medium">
+<p>28 Nov.</p>
+<p class="font-bold">18:00–19:30</p>
+<p class="text-blue-900/80">Main Quad COEP</p>
+</div>
+</div>
+</div>
+<div class="text-[11px] font-bold text-blue-950">
+              ₹50 • 2 Seats Left
+            </div>
+<!-- 3D Geometric Accents (Matching Reference) -->
+<div class="absolute -right-2 bottom-2 w-20 h-20 pointer-events-none select-none" data-purpose="sculptural-chair-accent">
+<!-- Hemisphere / Bowl (Pink-Beige) -->
+<div class="absolute right-2 top-0 w-12 h-10 rounded-t-full rounded-b-3xl shape-pedestal-3d"></div>
+<!-- Ribbed Teal Sphere -->
+<div class="absolute right-9 bottom-1 w-7 h-7 rounded-full shape-ribbed-sphere"></div>
+<!-- Small Bronze Sphere -->
+<div class="absolute right-2 bottom-0 w-4 h-4 rounded-full shape-pedestal-3d"></div>
+</div>
+</article>
+<!-- Right Bottom Card: Social / UPI Corridor Verification (Bubblegum Pink) -->
+<article class="bg-[#FFA1DE] rounded-[26px] p-3 flex items-center justify-around shadow-sm">
+<!-- Instagram / AISHE College Network -->
+<button aria-label="College Verification Group" class="w-9 h-9 rounded-full bg-white/70 flex items-center justify-center text-pink-900 hover:scale-105 transition shadow-xs">
+<svg class="w-4 h-4 fill-current" viewbox="0 0 24 24">
+<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.13-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path>
+</svg>
+</button>
+<!-- Campus WhatsApp/Telegram Community -->
+<button aria-label="Campus Transit Broadcast" class="w-9 h-9 rounded-full bg-white/70 flex items-center justify-center text-pink-900 hover:scale-105 transition shadow-xs">
+<svg class="w-4 h-4 fill-current" viewbox="0 0 24 24">
+<path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
+</svg>
+</button>
+<!-- Fast UPI Split QR / Twitter Notification -->
+<button aria-label="UPI Split Settlement" class="w-9 h-9 rounded-full bg-white/70 flex items-center justify-center text-pink-900 hover:scale-105 transition shadow-xs font-bold text-xs">
+<span>₹</span>
+</button>
+</article>
+</div>
+</section>
+<!-- END: Asymmetric Cards Grid -->
+</div>
+<!-- END: Scrollable Content Container -->
+<!-- BEGIN: Floating Bottom Navigation Pill (Matches Exact Reference) -->
+<nav class="absolute bottom-5 inset-x-6 z-30" data-purpose="floating-navigation-bar">
+<div class="h-16 bg-[#0E131F] rounded-full px-3 flex items-center justify-between shadow-nav">
+<!-- Active Pill Item: Home -->
+<a aria-label="Home Dashboard" class="h-11 px-5 rounded-full bg-white text-slate-900 flex items-center justify-center space-x-1.5 transition-transform active:scale-95 shadow-sm" href="#home">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24">
+<path d="M12 3.2L3 10.4V21h6v-6h6v6h6V10.4L12 3.2z"></path>
+</svg>
+</a>
+<!-- Grid / Carpool Hub Icon -->
+<a aria-label="Available Rides" class="w-11 h-11 rounded-full text-slate-400 hover:text-white flex items-center justify-center transition active:scale-95" href="#carpools">
+<svg class="w-5 h-5 stroke-current stroke-2 fill-none" viewbox="0 0 24 24">
+<rect height="7" rx="2" width="7" x="3" y="3"></rect>
+<rect height="7" rx="2" width="7" x="14" y="3"></rect>
+<rect height="7" rx="2" width="7" x="3" y="14"></rect>
+<rect height="7" rx="2" width="7" x="14" y="14"></rect>
+</svg>
+</a>
+<!-- Analytics / Fuel & Expense Log -->
+<a aria-label="Savings and Commute Stats" class="w-11 h-11 rounded-full text-slate-400 hover:text-white flex items-center justify-center transition active:scale-95" href="#analytics">
+<svg class="w-5 h-5 stroke-current stroke-2 fill-none" viewbox="0 0 24 24">
+<rect height="16" rx="4" width="16" x="4" y="4"></rect>
+<line x1="9" x2="9" y1="9" y2="15"></line>
+<line x1="12" x2="12" y1="7" y2="15"></line>
+<line x1="15" x2="15" y1="11" y2="15"></line>
+</svg>
+</a>
+<!-- User Profile Icon -->
+<a aria-label="Profile and College ID" class="w-11 h-11 rounded-full text-slate-400 hover:text-white flex items-center justify-center transition active:scale-95" href="#profile">
+<svg class="w-5 h-5 stroke-current stroke-2 fill-none" viewbox="0 0 24 24">
+<circle cx="12" cy="8" r="4"></circle>
+<path d="M5.5 20c0-3.5 3-6.5 6.5-6.5s6.5 3 6.5 6.5" stroke-linecap="round"></path>
+</svg>
+</a>
+</div>
+<!-- Home Indicator Bar (iOS Standard) -->
+<div class="w-32 h-1 bg-slate-900 rounded-full mx-auto mt-2 opacity-30"></div>
+</nav>
+<!-- END: Floating Bottom Navigation Pill -->
+</main>
+<!-- END: Mobile Device Frame -->
+<!-- BEGIN: Interactive Micro-Interactions -->
+<script data-purpose="toggle-active-states">
+    document.addEventListener('DOMContentLoaded', () => {
+      // Toggle date selection on click
+      const dateItems = document.querySelectorAll('[data-purpose="weekly-calendar-strip"] > div');
+      dateItems.forEach(item => {
+        item.addEventListener('click', () => {
+          dateItems.forEach(d => {
+            d.className = 'flex flex-col items-center justify-center w-11 py-1 rounded-2xl text-slate-400 cursor-pointer transition';
+            const dot = d.querySelector('span.rounded-full');
+            if (dot) dot.classList.replace('bg-white', 'bg-slate-300');
+          });
+          item.className = 'flex flex-col items-center justify-center w-11 py-1.5 rounded-full bg-slate-900 text-white shadow-md relative cursor-pointer transition';
+          let dot = item.querySelector('span.rounded-full');
+          if (dot) {
+            dot.className = 'w-1.5 h-1.5 rounded-full bg-white mb-0.5';
+          }
+        });
+      });
+    });
+  </script>
+<!-- END: Interactive Micro-Interactions -->
+</body></html>

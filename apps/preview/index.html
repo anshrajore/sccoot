@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scoot · Stitch vs implementation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --canvas: #E9E4FA;
+      --surface: #FFFFFF;
+      --subtle: #F3F0FC;
+      --ink: #12141A;
+      --muted: #666C7E;
+      --primary: #7C5CE6;
+      --ochre: #FFA940;
+      --sky: #A8C7FA;
+      --pink: #F7B5E6;
+      --safe: #22C55E;
+      --dock: #12141A;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+      background: #17131F;
+      color: #FBFAFD;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 24px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    header h1 { margin: 0; font-size: 18px; letter-spacing: -.02em; }
+    header p { margin: 0; color: #C4A5FF; font-size: 13px; }
+    .tabs { display: flex; gap: 8px; flex-wrap: wrap; padding: 12px 24px; }
+    .tabs button {
+      border: 0; border-radius: 999px; padding: 8px 14px; cursor: pointer;
+      background: #2a2436; color: #d7d0e8; font-weight: 600;
+    }
+    .tabs button.on { background: #fff; color: #12141A; }
+    .stage { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding: 8px 24px 40px; }
+    .col h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: #C4A5FF; }
+    .phone {
+      width: 390px; height: 844px; margin: 0 auto; border-radius: 40px;
+      overflow: hidden; background: var(--canvas); color: var(--ink);
+      box-shadow: 0 24px 80px rgba(0,0,0,.45); position: relative;
+    }
+    .phone img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+    .screen { padding: 28px 20px 110px; height: 100%; overflow: auto; }
+    .chip { display: inline-block; background: rgba(124,92,230,.12); color: var(--primary); border-radius: 999px; padding: 4px 10px; font-size: 12px; font-weight: 600; }
+    h3 { margin: 8px 0 4px; font-size: 28px; letter-spacing: -.03em; }
+    .muted { color: var(--muted); font-size: 14px; }
+    .days { display: flex; gap: 6px; background: var(--subtle); border-radius: 999px; padding: 6px; margin: 16px 0; }
+    .days span { flex: 1; text-align: center; border-radius: 999px; padding: 8px 0; font-size: 12px; font-weight: 700; }
+    .days .on { background: var(--ink); color: #fff; }
+    .card { border-radius: 32px; padding: 20px; margin: 12px 0; }
+    .sky { background: var(--sky); }
+    .ochre { background: var(--ochre); }
+    .pink { background: var(--pink); }
+    .white { background: #fff; box-shadow: 0 12px 32px -8px rgba(124,92,230,.08); }
+    .fare { font-size: 22px; font-weight: 800; letter-spacing: -.02em; }
+    .btn { width: 100%; border: 0; border-radius: 999px; background: var(--primary); color: #fff; font-weight: 700; padding: 14px; margin-top: 12px; cursor: pointer; }
+    .btn.dark { background: var(--ink); }
+    .btn.danger { background: #BA1A1A; }
+    .dock {
+      position: absolute; left: 20px; right: 20px; bottom: 22px; height: 58px;
+      background: var(--dock); border-radius: 999px; display: flex; align-items: center; justify-content: space-around;
+      color: rgba(255,255,255,.6); font-size: 12px; font-weight: 600;
+    }
+    .dock .a { background: #fff; color: var(--ink); padding: 8px 14px; border-radius: 999px; }
+    input { width: 100%; border: 1px solid rgba(18,20,26,.08); background: var(--subtle); border-radius: 999px; padding: 14px 18px; margin: 8px 0; font: inherit; }
+    .hidden { display: none; }
+    @media (max-width: 900px) { .stage { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Scoot P0 · side by side</h1>
+      <p>Stitch reference (left) · implemented UI (right). Private car only. No dispatch.</p>
+    </div>
+    <p>Pilot Institute · Pune corridor · DIRECTORY_ONLY until counsel LIVE</p>
+  </header>
+  <div class="tabs" id="tabs"></div>
+  <div class="stage">
+    <div class="col">
+      <h2>Stitch</h2>
+      <div class="phone"><img id="stitch" alt="Stitch screen" /></div>
+    </div>
+    <div class="col">
+      <h2>Implementation</h2>
+      <div class="phone" id="impl"></div>
+    </div>
+  </div>
+  <script>
+    const screens = [
+      { id: "home", label: "Dashboard", stitch: "/docs/design/stitch/scoot_daily_mobility_dashboard/screen.png" },
+      { id: "match", label: "Matches", stitch: "/docs/design/stitch/scoot_route_matching_commute_discovery/screen.png" },
+      { id: "quote", label: "Fair split", stitch: "/docs/design/stitch/scoot_fair_cost_sharing_engine/screen.png" },
+      { id: "confirm", label: "Confirm", stitch: "/docs/design/stitch/scoot_1_tap_re_booking_confirmation_upi_otp/screen.png" },
+      { id: "passport", label: "Passport", stitch: "/docs/design/stitch/scoot_commute_passport_identity/screen.png" },
+      { id: "verify", label: "Verify", stitch: "/docs/design/stitch/scoot_student_verification_mobility_passport/screen.png" },
+      { id: "driver", label: "Offer ride", stitch: "/docs/design/stitch/scoot_offer_a_ride_driver_route_creation_1/screen.png" },
+      { id: "requests", label: "Requests", stitch: "/docs/design/stitch/scoot_driver_request_management/screen.png" },
+      { id: "trip", label: "Live trip", stitch: "/docs/design/stitch/scoot_live_commute_tracking_safety/screen.png" },
+      { id: "sos", label: "SOS", stitch: "/docs/design/stitch/scoot_campus_safety_sos_live_audio_check/screen.png" },
+      { id: "receipt", label: "Receipt", stitch: "/docs/design/stitch/scoot_trip_receipt_peer_rating/screen.png" },
+    ];
+
+    const impl = {
+      home: `<div class="screen">
+        <div class="muted">Good morning</div><h3>Hello, student</h3>
+        <div class="chip">Pilot Institute of Technology Pune • Verified campus</div>
+        <div class="days"><span class="on">Mon<br>10</span><span>Tue<br>11</span><span>Wed<br>12</span><span>Thu<br>13</span><span>Fri<br>14</span></div>
+        <div class="card sky"><b>Your plan</b><div>Baner road → Gate 3</div><div class="muted">08:15–08:45 • private carpool corridor</div></div>
+        <div class="card ochre"><b>Suggested match</b><div>Driver-owned Baner → Gate 3 • 2 seats</div>
+          <div class="fare">₹33.33 permitted</div><div>Walk 180 m • detour 4 min • no surge</div>
+          <button class="btn">Review matches</button></div>
+        <div class="card pink"><b>Fair split preview</b><div>Segment occupancy, then Maharashtra cap. Raw ≠ chargeable automatically.</div></div>
+        <div class="dock"><span class="a">Home</span><span>Match</span><span>Passport</span><span>Drive</span></div>
+      </div>`,
+      match: `<div class="screen">
+        <h3>Matches</h3>
+        <p class="muted">Private cars only. Driver origin and destination stay on the published journey.</p>
+        <div class="card ochre"><b>Baner → Gate 3</b><div>Walk 180 m • detour 4 min • 1 seat</div>
+          <div class="fare">₹33.33</div><div class="muted">Raw allocation equals permitted under current MH cap version.</div>
+          <button class="btn">Request seat</button></div>
+        <div class="dock"><span>Home</span><span class="a">Match</span><span>Passport</span><span>Drive</span></div>
+      </div>`,
+      quote: `<div class="screen">
+        <h3>Fair split</h3>
+        <div class="card pink">
+          <div class="muted">20 km • ₹8/km eligible • occupants change at each stop</div>
+          <div class="fare">A ₹33.33 · B ₹29.34</div>
+          <p>Driver keeps uncollected remainder after legal caps. No surge. No Scoot wallet.</p>
+          <button class="btn">Confirm route + quote</button>
+        </div>
+      </div>`,
+      confirm: `<div class="screen">
+        <h3>Confirm arrangement</h3>
+        <div class="card white">
+          <div class="chip">Same route version + quote hash</div>
+          <p>Pickup OTP issued after both parties confirm. UPI is a P1 PSP adapter.</p>
+          <button class="btn">Confirm</button>
+        </div>
+      </div>`,
+      passport: `<div class="screen">
+        <h3>Commute passport</h3>
+        <p class="muted">Reusable intent. This is not a booking.</p>
+        <input value="Baner road" /><input value="Gate 3" />
+        <div class="card white">Mon–Fri • arrive 08:45 • max walk 400 m<div class="muted">Dated trip occurrences are generated by the scheduler.</div></div>
+        <div class="dock"><span>Home</span><span>Match</span><span class="a">Passport</span><span>Drive</span></div>
+      </div>`,
+      verify: `<div class="screen">
+        <div class="chip">AISHE • Pilot Institute of Technology Pune</div>
+        <h3>Mobility passport</h3>
+        <p class="muted">Live rides are adult-only. Documents stay in a private bucket. Reviewer decisions are audited.</p>
+        <button class="btn">I am 18+ and continue</button>
+      </div>`,
+      driver: `<div class="screen">
+        <h3>Offer a ride</h3>
+        <p class="muted">Publish a journey you already plan to drive. Passengers cannot redefine origin or destination.</p>
+        <div class="card white">Origin: Baner<br/>Destination: Hinjawadi Gate 3<br/>Seats: 2 • max detour 8 min • private non-transport car</div>
+        <button class="btn">Review rider requests</button>
+        <div class="dock"><span>Home</span><span>Match</span><span>Passport</span><span class="a">Drive</span></div>
+      </div>`,
+      requests: `<div class="screen">
+        <h3>Requests</h3>
+        <div class="card sky"><b>Aditi • Gate 3</b><div>Pickup walk 180 m • same quote version</div>
+          <button class="btn">Accept exact route + quote</button>
+          <p>Decline presets: seats full · detour too far · schedule mismatch</p>
+        </div>
+      </div>`,
+      trip: `<div class="screen">
+        <h3>Live commute</h3>
+        <div class="card white">
+          <div class="chip">Location stale — last seen shown, not live</div>
+          <p>Precise GPS is only for confirmed active-trip participants.</p>
+          <button class="btn">Verify pickup OTP</button>
+          <button class="btn danger">SOS / report</button>
+          <button class="btn dark">Verify drop-off</button>
+        </div>
+      </div>`,
+      sos: `<div class="screen">
+        <h3>Safety</h3>
+        <div class="card white">
+          SOS notifies assigned operations reviewers. Live-audio is not part of P0. Incident case is persisted.
+          <button class="btn danger">Send SOS</button>
+        </div>
+      </div>`,
+      receipt: `<div class="screen">
+        <h3>Trip receipt</h3>
+        <div class="card white">
+          <div class="fare">₹33.33 permitted</div>
+          <p class="muted">Payment status comes from a signed PSP event in P1, not this screen.</p>
+          Rate your peer • report if needed
+        </div>
+      </div>`,
+    };
+
+    const tabs = document.getElementById("tabs");
+    screens.forEach((s, i) => {
+      const b = document.createElement("button");
+      b.textContent = s.label;
+      b.onclick = () => show(s.id);
+      if (i === 0) b.className = "on";
+      tabs.appendChild(b);
+    });
+
+    function show(id) {
+      const s = screens.find((x) => x.id === id);
+      document.getElementById("stitch").src = s.stitch;
+      document.getElementById("impl").innerHTML = impl[id];
+      [...tabs.children].forEach((b, i) => b.classList.toggle("on", screens[i].id === id));
+    }
+    show("home");
+  </script>
+</body>
+</html>

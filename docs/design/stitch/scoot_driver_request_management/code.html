@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#faf8ff;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-container-low": "#f3f3fc", "surface-container-high": "#e7e7f0", "outline-variant": "#cac4d6", "on-secondary-container": "#6e4100", "on-primary-container": "#fffcff", "surface-bright": "#faf8ff", "on-surface": "#191b22", "on-primary": "#ffffff", "on-secondary-fixed-variant": "#683d00", "tertiary-fixed": "#d5e3ff", "surface-container-lowest": "#ffffff", "on-tertiary-fixed": "#001c3b", "on-error": "#ffffff", "on-tertiary-container": "#fefcff", "on-secondary": "#ffffff", "primary-fixed": "#e7deff", "primary-container": "#7c5ce6", "on-surface-variant": "#484554", "surface-container": "#ededf6", "inverse-on-surface": "#f0f0f9", "on-tertiary-fixed-variant": "#274773", "tertiary": "#3e5d8a", "on-background": "#191b22", "secondary-container": "#ffa940", "surface-dim": "#d9d9e2", "error": "#ba1a1a", "surface-variant": "#e2e2ea", "secondary": "#885200", "on-error-container": "#93000a", "tertiary-container": "#5776a4", "outline": "#797585", "on-secondary-fixed": "#2c1700", "tertiary-fixed-dim": "#a9c8fb", "surface": "#faf8ff", "background": "#faf8ff", "primary": "#6341cb", "primary-fixed-dim": "#ccbdff", "inverse-surface": "#2e3037", "surface-tint": "#6543ce", "on-tertiary": "#ffffff", "inverse-primary": "#ccbdff", "secondary-fixed-dim": "#ffb86a", "error-container": "#ffdad6", "secondary-fixed": "#ffdcbc", "on-primary-fixed": "#1f0060", "on-primary-fixed-variant": "#4d25b5", "surface-container-highest": "#e2e2ea" }, borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, spacing: { "space-lg": "1.25rem", "gutter": "0.75rem", "space-xs": "0.5rem", "space-2xl": "2.5rem", "margin-desktop": "2rem", "margin": "1.25rem", "space-md": "1rem", "space-sm": "0.75rem", "space-2xs": "0.25rem", "space-xl": "1.75rem", "gutter-desktop": "1.25rem" }, fontFamily: { "label-md": ["Plus Jakarta Sans"], "currency-lg": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "title-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"] }, fontSize: { "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600" }], "currency-lg": ["22px", { "lineHeight": "26px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "headline-lg-mobile": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }], "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "title-md": ["16px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "600" }], "headline-lg": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-lg": ["15px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "500" }], "headline-md": ["20px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "label-lg": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-12 px-6 flex items-center justify-between text-on-surface"><span class="font-label-md text-label-md font-bold tracking-tight">9:41</span><div class="w-24 h-5 bg-inverse-surface rounded-full flex items-center justify-center"><div class="w-2 h-2 rounded-full bg-surface/20 mr-2"></div></div><div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px]">signal_cellular_alt</span><span class="material-symbols-outlined text-[14px]">wifi</span><span class="material-symbols-outlined text-[18px]">battery_full</span></div></div><div class="h-16 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-xs"><div class="w-9 h-9 rounded-full bg-primary-container flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-on-primary-container text-[20px]">electric_scooter</span></div><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold">Student Profile</span></div><div class="flex items-center gap-space-xs"><button class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined text-[22px]">notifications</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col w-full bg-surface pt-28 pb-32"><div class="flex flex-col w-full px-margin space-y-space-md">
+<!-- Host Trip Context Card -->
+<div class="w-full bg-surface-container-lowest rounded-lg p-space-md shadow-sm relative overflow-hidden">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="min-w-0 flex-1">
+<div class="flex items-center gap-space-2xs flex-wrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-md text-label-md">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">directions_car</span>
+            Ride #SC-892
+          </span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-md text-label-md font-semibold">
+            2 Seats Left
+          </span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mt-2 tracking-tight">Kothrud Depot → COEP Gate 3</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px] text-primary">schedule</span>
+          Tomorrow, 08:15 AM • 9.2 km corridor
+        </p>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="font-label-md text-label-md text-on-surface-variant">Car Pool</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Verna • MH12</span>
+</div>
+</div>
+<!-- Corridor Micro-Visualizer -->
+<div class="mt-space-md p-space-sm rounded-DEFAULT bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-tertiary">alt_route</span>
+          Smart Corridor Spine
+        </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest text-tertiary font-label-md text-label-md font-bold">
+          +6 min total detour
+        </span>
+</div>
+<!-- Segment Map Line -->
+<div class="relative py-1">
+<div class="h-2 w-full bg-surface-container-high rounded-full overflow-hidden flex">
+<div class="h-full bg-primary-container w-[28%]"></div>
+<div class="h-full bg-secondary-container w-[35%]"></div>
+<div class="h-full bg-primary w-[37%]"></div>
+</div>
+<div class="flex justify-between items-center mt-1.5 font-label-md text-label-md text-on-surface-variant">
+<span class="flex items-center gap-0.5"><span class="w-1.5 h-1.5 rounded-full bg-primary-container inline-block"></span> Kothrud</span>
+<span class="flex items-center gap-0.5"><span class="w-1.5 h-1.5 rounded-full bg-secondary-container inline-block"></span> Goodluck Chwk</span>
+<span class="flex items-center gap-0.5"><span class="w-1.5 h-1.5 rounded-full bg-primary inline-block"></span> Deccan</span>
+<span class="flex items-center gap-0.5 font-semibold text-on-surface">COEP</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Day & Filter Capsule Bar (Ref Style) -->
+<div class="w-full flex items-center justify-between gap-space-2xs bg-surface-container-low p-1.5 rounded-full">
+<div class="flex items-center gap-1.5 px-3 py-1 bg-surface-container-lowest rounded-full shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">pending_actions</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">2 Requests Pending</span>
+</div>
+<!-- Auto Accept Mutual Batchmates Toggle -->
+<div class="flex items-center gap-2 pr-2">
+<span class="font-label-md text-label-md text-on-surface-variant">Auto-batch</span>
+<button aria-label="Toggle auto-accept" class="w-10 h-6 bg-surface-container-highest rounded-full p-0.5 transition-colors relative flex items-center" id="batch-toggle" type="button">
+<div class="w-5 h-5 rounded-full bg-surface-container-lowest shadow-sm transform transition-transform" id="batch-knob"></div>
+</button>
+</div>
+</div>
+<!-- Section Header -->
+<div class="flex items-center justify-between pt-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Seat Requests</h3>
+<span class="font-label-md text-label-md text-on-surface-variant">Priority corridor matching</span>
+</div>
+<!-- Request Card 1: Priya Kulkarni (Vibrant ochre-styled priority card) -->
+<div class="w-full bg-surface-container-lowest rounded-lg p-space-md shadow-sm transition-all duration-300 relative" id="request-priya">
+<!-- Top Row: Student Profile -->
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative shrink-0">
+<img class="w-13 h-13 rounded-full object-cover shadow-sm bg-surface-container" data-alt="Warm natural portrait of an Indian female college student in her early twenties wearing casual campus hoodie with soft bokeh campus background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDsNterlIvSH4gkDyg2NC7KIEtkfkk7UvvDKXYGmsYhLnw3GQpAvC_r8nslbMqqB4qbcHWXc-rCyrVRs0URAUHoLI5Fs37rMmmIdeFR_EtAgIubnBF_D9XdpfcfKo4l8S4NBYhp_ms-HwyyH8FVPy_Spm7RIQvMXlWjywDGHTguPYF2fIsPrOM7uWYVx_eDSyzJBcrc24qAxC9Nc2P5JrwR6d0ayCHXI-CY56_J5uE" style="width: 52px; height: 52px;"/>
+<span class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-title-md text-title-md text-on-surface truncate">Priya Kulkarni</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-md text-label-md">COEP '26</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Mechanical Engg • 34 pooled rides</p>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-label-md text-label-md text-secondary flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              4.95
+            </span>
+<span class="font-label-md text-label-md text-on-surface-variant">• 3 mutual batchmates</span>
+</div>
+</div>
+</div>
+<!-- Fair Split Fare Badge -->
+<div class="flex flex-col items-end shrink-0 bg-secondary-fixed/50 px-3 py-1.5 rounded-DEFAULT">
+<span class="font-currency-lg text-currency-lg text-on-secondary-container">₹38</span>
+<span class="font-label-md text-label-md text-on-secondary-fixed-variant">MH Segment rule</span>
+</div>
+</div>
+<!-- Match Highlights Pill Cluster -->
+<div class="flex flex-wrap gap-1.5 mt-space-sm">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-low text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-[14px] text-tertiary">route</span>
+        88% Route Overlap
+      </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[14px]">multiple_airports</span>
+        +2 min detour (350m)
+      </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-low text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[14px]">volume_off</span>
+        Quiet Commute
+      </span>
+</div>
+<!-- Pickup & Drop Mini Waypoint Tile -->
+<div class="mt-space-sm p-space-sm rounded-DEFAULT bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary mt-0.5">trip_origin</span>
+<div class="min-w-0">
+<p class="font-label-md text-label-md text-on-surface-variant">Pickup Point</p>
+<p class="font-body-sm text-body-sm text-on-surface font-semibold truncate">Goodluck Chowk / FC Road Bus Bay</p>
+</div>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary mt-0.5">location_on</span>
+<div class="min-w-0">
+<p class="font-label-md text-label-md text-on-surface-variant">Drop-off Destination</p>
+<p class="font-body-sm text-body-sm text-on-surface font-semibold truncate">COEP Main Quadrangle Gate 3</p>
+</div>
+</div>
+</div>
+<!-- Action Buttons: Tactile High Contrast -->
+<div class="flex items-center gap-space-xs mt-space-md">
+<button class="flex-1 py-3 px-space-sm rounded-full bg-surface-container-high text-on-surface-variant font-label-lg text-label-lg active:scale-95 transition-all text-center" onclick="rejectRequest('request-priya')">
+        Decline
+      </button>
+<button class="flex-[2] py-3 px-space-md rounded-full bg-inverse-surface text-surface font-label-lg text-label-lg font-bold shadow-md hover:opacity-95 active:scale-95 transition-all flex items-center justify-center gap-1.5" onclick="acceptRequest('request-priya')">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+        Accept &amp; Lock Seat
+      </button>
+</div>
+</div>
+<!-- Request Card 2: Dev Malhotra (Sky pastel variant) -->
+<div class="w-full bg-surface-container-lowest rounded-lg p-space-md shadow-sm transition-all duration-300 relative" id="request-dev">
+<!-- Top Row: Student Profile -->
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative shrink-0">
+<img class="w-13 h-13 rounded-full object-cover shadow-sm bg-surface-container" data-alt="Crisp profile headshot of a confident Indian male student wearing a stylish denim jacket on a sunlit university campus footpath" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMBXpCe-J6ZNliDASWhsV8xNZ14Lio6OgozjqOHvXornMUA4orewLU84OQ1T8Dpmmo365NLTOf-gTR6K51bbScCS2V0F4nj2A7ABdUcPtpA2YxHoZXDMnVhk1izpGVZuIz5pX04aHqSVDOAy5GYmo62a9ocnSzul7kWIB0ty52APqYu-oZ-i2tq6Kbr0p_VXN0DmNsfD8hZi7LWfd5W-XTRKIG2ZD3xEqQkxMFFEUE" style="width: 52px; height: 52px;"/>
+<span class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-tertiary flex items-center justify-center text-on-tertiary">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">badge</span>
+</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-title-md text-title-md text-on-surface truncate">Dev Malhotra</span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-md text-label-md">Symbiosis '25</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Computer Applications • Digilocker ID</p>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-label-md text-label-md text-secondary flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              4.80
+            </span>
+<span class="font-label-md text-label-md text-on-surface-variant">• 19 campus trips</span>
+</div>
+</div>
+</div>
+<!-- Fair Split Fare Badge -->
+<div class="flex flex-col items-end shrink-0 bg-tertiary-fixed/60 px-3 py-1.5 rounded-DEFAULT">
+<span class="font-currency-lg text-currency-lg text-on-tertiary-fixed">₹34</span>
+<span class="font-label-md text-label-md text-on-tertiary-fixed-variant">Auto-Calculated</span>
+</div>
+</div>
+<!-- Match Highlights Pill Cluster -->
+<div class="flex flex-wrap gap-1.5 mt-space-sm">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-low text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-[14px] text-tertiary">alt_route</span>
+        79% Route Overlap
+      </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+        +3 min detour
+      </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-low text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[14px]">luggage</span>
+        Laptop Bag only
+      </span>
+</div>
+<!-- Pickup & Drop Mini Waypoint Tile -->
+<div class="mt-space-sm p-space-sm rounded-DEFAULT bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-tertiary mt-0.5">trip_origin</span>
+<div class="min-w-0">
+<p class="font-label-md text-label-md text-on-surface-variant">Pickup Point</p>
+<p class="font-body-sm text-body-sm text-on-surface font-semibold truncate">Deccan Gymkhana PMPML Shelter</p>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center gap-space-xs mt-space-md">
+<button class="flex-1 py-3 px-space-sm rounded-full bg-surface-container-high text-on-surface-variant font-label-lg text-label-lg active:scale-95 transition-all text-center" onclick="rejectRequest('request-dev')">
+        Decline
+      </button>
+<button class="flex-[2] py-3 px-space-md rounded-full bg-inverse-surface text-surface font-label-lg text-label-lg font-bold shadow-md hover:opacity-95 active:scale-95 transition-all flex items-center justify-center gap-1.5" onclick="acceptRequest('request-dev')">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+        Accept &amp; Lock Seat
+      </button>
+</div>
+</div>
+<!-- Confirmed Co-Riders Strip -->
+<div class="w-full bg-surface-container-lowest rounded-lg p-space-md shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">event_seat</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Confirmed Seats (1/3)</h4>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-md text-label-md font-bold">1 Locked</span>
+</div>
+<div class="flex items-center justify-between p-space-sm rounded-DEFAULT bg-surface-container-low">
+<div class="flex items-center gap-space-sm min-w-0">
+<img class="w-10 h-10 rounded-full object-cover bg-surface-container" data-alt="Student driver smiling in a car looking back warmly with glasses, Pune campus setting in afternoon natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4ICzBJkUCnIyveRm8sFLekgmf6Ws5thxuq1tXIRzFuu3xsjQYnBZ5jjVoNQnUtrat4O33Jc3FkVAUaQXU6VErnkUv3y9tzhcisUL72XY43y51pw5Bu07E1I6qOeB8d-CkLNeeK9-3102oVMUo_aGaUfRnl4nw5Lbm0ATw3GLStltTFmT5q34SGxjdXyF2cgDSgtYXLEM4EsFcFlMsZA8Q274-3nqMIhzGpWKhTQRl" style="width: 40px; height: 40px;"/>
+<div class="min-w-0">
+<p class="font-title-md text-title-md text-on-surface truncate">Rohan Deshpande</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Fergusson College • Rear Window Seat</p>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-[12px] text-primary">pin</span>
+          OTP: ****
+        </span>
+<span class="font-label-md text-label-md text-primary mt-0.5">UPI Auto-hold ✓</span>
+</div>
+</div>
+</div>
+<!-- Maharashtra Carpool Compliance & Safety Banner -->
+<div class="w-full bg-surface-container-low rounded-lg p-space-md flex flex-col gap-2">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+</div>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Non-Commercial Peer Transit Policy</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+      Peer cost split meets 2026 Maharashtra non-commercial transport guidelines. Zero commission fee. Weekly limit: 5 of 14 trips completed.
+    </p>
+</div>
+<!-- Toast Notification Container (Dynamic via JS) -->
+<div class="fixed top-24 left-1/2 -translate-x-1/2 bg-inverse-surface text-surface px-4 py-2.5 rounded-full shadow-xl font-label-lg text-label-lg items-center gap-2 transition-all duration-300 opacity-0 pointer-events-none z-50 flex" id="toast-pill">
+<span class="material-symbols-outlined text-[18px] text-secondary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span id="toast-message">Seat locked and confirmed!</span>
+</div>
+</div>
+<script>
+  function showToast(text) {
+    const toast = document.getElementById('toast-pill');
+    const msg = document.getElementById('toast-message');
+    if (!toast || !msg) return;
+    msg.textContent = text;
+    toast.classList.remove('opacity-0', 'pointer-events-none');
+    toast.classList.add('opacity-100');
+    setTimeout(() => {
+      toast.classList.remove('opacity-100');
+      toast.classList.add('opacity-0', 'pointer-events-none');
+    }, 2400);
+  }
+
+  function acceptRequest(cardId) {
+    const card = document.getElementById(cardId);
+    if (!card) return;
+    card.classList.add('scale-95', 'opacity-50');
+    setTimeout(() => {
+      card.innerHTML = `
+        <div class="p-space-sm bg-primary-fixed/40 rounded-DEFAULT flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">task_alt</span>
+            <span class="font-label-lg text-label-lg font-bold text-on-primary-fixed">Seat Reserved • OTP Shared</span>
+          </div>
+          <span class="font-label-md text-label-md text-primary font-semibold">UPI Escrow Active</span>
+        </div>
+      `;
+      card.classList.remove('scale-95', 'opacity-50');
+      showToast('Seat approved! Rider notified with pickup pin.');
+    }, 280);
+  }
+
+  function rejectRequest(cardId) {
+    const card = document.getElementById(cardId);
+    if (!card) return;
+    card.classList.add('scale-90', 'opacity-0');
+    setTimeout(() => {
+      card.style.display = 'none';
+      showToast('Polite pass sent. Match slot released.');
+    }, 300);
+  }
+
+  // Batch toggle micro-interaction
+  const toggleBtn = document.getElementById('batch-toggle');
+  const knob = document.getElementById('batch-knob');
+  let toggleActive = false;
+
+  if (toggleBtn && knob) {
+    toggleBtn.addEventListener('click', () => {
+      toggleActive = !toggleActive;
+      if (toggleActive) {
+        toggleBtn.classList.remove('bg-surface-container-highest');
+        toggleBtn.classList.add('bg-primary');
+        knob.classList.add('translate-x-4');
+        showToast('Auto-accept turned ON for verified batchmates');
+      } else {
+        toggleBtn.classList.remove('bg-primary');
+        toggleBtn.classList.add('bg-surface-container-highest');
+        knob.classList.remove('translate-x-4');
+        showToast('Auto-accept turned OFF');
+      }
+    });
+  }
+</script></main><div class="fixed bottom-0 w-full z-50 pb-safe pointer-events-none"><div class="px-space-margin pb-4 w-full flex justify-center"><nav class="pointer-events-auto w-full max-w-sm bg-[#0F141F] rounded-full p-1.5 flex items-center justify-between shadow-[0_16px_36px_rgba(15,20,31,0.28)]" data-active-classes="bg-surface-container-lowest text-on-surface shadow-sm"><a class="flex items-center justify-center w-12 h-12 rounded-full text-surface-dim hover:text-surface-bright transition-all" data-path="campus-feed" href="#"><span class="material-symbols-outlined text-[22px]">home</span></a><a class="flex items-center justify-center w-12 h-12 rounded-full text-surface-dim hover:text-surface-bright transition-all" data-path="route-matches" href="#"><span class="material-symbols-outlined text-[22px]">alt_route</span></a><a class="flex items-center justify-center w-12 h-12 rounded-full text-surface-dim hover:text-surface-bright transition-all" data-path="cost-and-safety" href="#"><span class="material-symbols-outlined text-[22px]">verified_user</span></a><a class="flex items-center justify-center w-12 h-12 rounded-full text-surface-dim hover:text-surface-bright transition-all" data-path="student-profile" href="#"><span class="material-symbols-outlined text-[22px]">badge</span></a></nav></div></div></body></html>

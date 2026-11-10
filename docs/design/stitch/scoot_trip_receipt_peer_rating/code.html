@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#faf8ff;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-container-highest": "#e2e2ea", "on-secondary-container": "#6e4100", "error": "#ba1a1a", "background": "#faf8ff", "surface-dim": "#d9d9e2", "tertiary-fixed": "#d5e3ff", "surface-container-low": "#f3f3fc", "on-error-container": "#93000a", "on-tertiary-fixed": "#001c3b", "tertiary": "#3e5d8a", "inverse-surface": "#2e3037", "on-tertiary-container": "#fefcff", "on-secondary": "#ffffff", "outline": "#797585", "inverse-primary": "#ccbdff", "on-surface": "#191b22", "primary-fixed-dim": "#ccbdff", "secondary-fixed": "#ffdcbc", "secondary": "#885200", "error-container": "#ffdad6", "primary-container": "#7c5ce6", "on-secondary-fixed": "#2c1700", "surface-container-high": "#e7e7f0", "surface": "#faf8ff", "on-primary-container": "#fffcff", "on-primary-fixed-variant": "#4d25b5", "on-tertiary": "#ffffff", "tertiary-container": "#5776a4", "surface-tint": "#6543ce", "on-error": "#ffffff", "tertiary-fixed-dim": "#a9c8fb", "on-tertiary-fixed-variant": "#274773", "on-surface-variant": "#484554", "on-primary-fixed": "#1f0060", "surface-container-lowest": "#ffffff", "outline-variant": "#cac4d6", "primary": "#6341cb", "on-secondary-fixed-variant": "#683d00", "secondary-fixed-dim": "#ffb86a", "surface-bright": "#faf8ff", "secondary-container": "#ffa940", "inverse-on-surface": "#f0f0f9", "on-background": "#191b22", "surface-container": "#ededf6", "primary-fixed": "#e7deff", "on-primary": "#ffffff", "surface-variant": "#e2e2ea" }, borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, spacing: { "space-xl": "1.75rem", "space-2xs": "0.25rem", "gutter": "0.75rem", "space-xs": "0.5rem", "margin-desktop": "2rem", "gutter-desktop": "1.25rem", "space-md": "1rem", "space-sm": "0.75rem", "space-22xl": "2.5rem", "space-lg": "1.25rem", "margin": "1.25rem" }, fontFamily: { "label-md": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "title-md": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "currency-lg": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"] }, fontSize: { "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-md": ["20px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-lg-mobile": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "title-md": ["16px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "600" }], "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "headline-lg": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-lg": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }], "currency-lg": ["22px", { "lineHeight": "26px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "body-lg": ["15px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "500" }] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 inset-x-0 z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><button aria-label="Go back or close" class="w-11 h-11 rounded-full bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-on-surface transition-colors" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[20px]">close</span></button><h1 class="font-headline-sm text-headline-sm text-on-surface tracking-tight truncate">Trip Receipt And Feedback</h1></div><div class="flex items-center"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-safe bg-surface px-margin"><div class="flex flex-col w-full pb-28">
+<!-- Completion Banner & Celebration -->
+<div class="flex items-center justify-between mb-space-md pt-space-xs">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-2xs">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight">Ride Completed!</span>
+<span class="text-[22px]">🎉</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">
+        Arrived safely at <span class="font-medium text-on-surface">COEP Gate 3</span> • 08:37 AM
+      </p>
+</div>
+<div class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-on-secondary-fixed text-[26px]">electric_car</span>
+</div>
+</div>
+<!-- On-time Campus Status Pill -->
+<div class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container-high w-fit mb-space-lg">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<p class="font-label-lg text-label-lg text-on-surface">8 mins ahead of 08:45 AM Mechanics lecture</p>
+</div>
+<!-- Main Driver Rating Card (Warm Ochre Neo-Tactile Block) -->
+<section class="rounded-lg bg-secondary-container p-space-lg text-on-secondary-container shadow-sm mb-space-lg relative overflow-hidden">
+<!-- Top Driver Meta Pill -->
+<div class="flex items-center justify-between mb-space-md">
+<span class="px-space-sm py-1 rounded-full bg-surface-container-lowest/80 text-on-surface font-label-md text-label-md">
+        COEP '25 • Comp Sci Senior
+      </span>
+<div class="flex items-center gap-1 bg-surface-container-lowest/90 px-space-sm py-1 rounded-full">
+<span class="material-symbols-outlined text-[16px] text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-lg text-label-lg text-on-surface">4.96</span>
+<span class="font-body-sm text-body-sm text-outline">(143)</span>
+</div>
+</div>
+<!-- Host Identity -->
+<div class="flex items-center gap-space-md mb-space-lg">
+<div class="relative">
+<img class="w-16 h-16 rounded-full object-cover shadow-sm bg-surface-container-high" data-alt="Warm candid portrait of Tanvi Deshpande, an Indian engineering college student with friendly smile wearing a collegiate denim jacket, soft natural daylight, university campus greenery in background, vibrant authentic photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlapFtx2fBnt4j3E6Dll3aKwDVcYyiHz1dID7L5abHWhjFYG5_BrC_yjSn8Gme4o3wE-ibKhUwJzD02QnykLvXA93Y25QvtEQQ5iGYs-XtcJEm4zMOZJoC2g0Wfwbhdn9GsgBec-Yhnb7oF5H8K7MMxPvHw8TP4GVSNZYiXljJYuXVCiLZ_SeopbHHi8HmBim-qO9KSzOqgG5HcZQ6ay25AZmxuEWYHri2G931hAuK"/>
+<div class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-primary flex items-center justify-center shadow-xs">
+<span class="material-symbols-outlined text-[14px] text-on-primary" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div class="flex flex-col min-w-0">
+<h2 class="font-headline-sm text-headline-sm text-on-secondary-container truncate">Tanvi Deshpande</h2>
+<p class="font-body-sm text-body-sm text-on-secondary-variant">Tata Tiago EV • <span class="font-mono">MH 12 RN 2044</span></p>
+<p class="font-label-md text-label-md text-on-secondary-container mt-0.5">Deccan Gymkhana → COEP Main Gate</p>
+</div>
+</div>
+<!-- Interactive Star Rating Area -->
+<div class="bg-surface-container-lowest rounded-DEFAULT p-space-md mb-space-md flex flex-col items-center">
+<p class="font-label-lg text-label-lg text-on-surface mb-space-xs">How was your trip with Tanvi?</p>
+<div class="flex items-center gap-space-xs" id="star-rating-group">
+<button aria-label="1 star" class="p-1 text-secondary transition-transform active:scale-95 star-btn" type="button">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<button aria-label="2 stars" class="p-1 text-secondary transition-transform active:scale-95 star-btn" type="button">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<button aria-label="3 stars" class="p-1 text-secondary transition-transform active:scale-95 star-btn" type="button">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<button aria-label="4 stars" class="p-1 text-secondary transition-transform active:scale-95 star-btn" type="button">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<button aria-label="5 stars" class="p-1 text-secondary transition-transform active:scale-95 star-btn" type="button">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+</div>
+<span class="font-body-sm text-body-sm text-secondary mt-1 font-semibold">Outstanding ride experience!</span>
+</div>
+<!-- Peer Praise Chips -->
+<div class="flex flex-col gap-space-xs mb-space-md">
+<span class="font-label-md text-label-md text-on-secondary-container uppercase tracking-wider">Leave Campus Praise</span>
+<div class="flex flex-wrap gap-space-xs">
+<button class="tag-pill px-space-md py-1.5 rounded-full font-label-lg text-label-lg bg-surface-container-lowest text-on-surface shadow-xs transition-colors flex items-center gap-1 active:scale-95" type="button">
+<span>⏱️ Punctual</span>
+</button>
+<button class="tag-pill px-space-md py-1.5 rounded-full font-label-lg text-label-lg bg-primary text-on-primary shadow-xs transition-colors flex items-center gap-1 active:scale-95" type="button">
+<span>⚡️ Smooth EV Drive</span>
+</button>
+<button class="tag-pill px-space-md py-1.5 rounded-full font-label-lg text-label-lg bg-primary text-on-primary shadow-xs transition-colors flex items-center gap-1 active:scale-95" type="button">
+<span>🎵 Great Playlist</span>
+</button>
+<button class="tag-pill px-space-md py-1.5 rounded-full font-label-lg text-label-lg bg-surface-container-lowest text-on-surface shadow-xs transition-colors flex items-center gap-1 active:scale-95" type="button">
+<span>💬 Polite &amp; Friendly</span>
+</button>
+<button class="tag-pill px-space-md py-1.5 rounded-full font-label-lg text-label-lg bg-surface-container-lowest text-on-surface shadow-xs transition-colors flex items-center gap-1 active:scale-95" type="button">
+<span>📚 Campus Advice</span>
+</button>
+</div>
+</div>
+<!-- Optional Quick Peer Note -->
+<div class="relative">
+<input class="w-full bg-surface-container-lowest rounded-full px-space-md py-2.5 font-body-sm text-body-sm text-on-surface placeholder-outline focus:outline-none shadow-xs" type="text" value="Thanks for dropping me right near the library gate!"/>
+<div class="absolute right-3 top-2.5">
+<span class="material-symbols-outlined text-[18px] text-primary">edit_note</span>
+</div>
+</div>
+</section>
+<!-- Campus Green Impact & Co-riders Capsule -->
+<section class="rounded-lg bg-tertiary-fixed p-space-md text-on-tertiary-fixed mb-space-lg flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px] text-tertiary">eco</span>
+</div>
+<div class="flex flex-col min-w-0">
+<p class="font-title-md text-title-md truncate">1.4 kg CO₂ prevented</p>
+<p class="font-body-sm text-body-sm text-on-tertiary-fixed-variant truncate">Shared ride with Arnav &amp; Shreya</p>
+</div>
+</div>
+<!-- Passenger Mini Avatar Cluster -->
+<div class="flex items-center -space-x-2 shrink-0">
+<img class="w-7 h-7 rounded-full object-cover bg-surface-container-high ring-2 ring-surface-container-lowest" data-alt="Portrait of Arnav, a young college student in round spectacles with smiling face outdoors on Indian campus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF_MJO1TdkUz3Sjw288kyyfaf_LiJ-1GePLtJuQc9lMd_Umsx2LfLrwyRjMeVEk35a7PqlZwNZ_3kpfNJVdG1uHMHMTv-hFKKPUfxuWZ8fBvWq90J60Ar74LfdHLxVTmB2yMs5UkWetG9ypjSl1LzD7iq46AwFmxghaI1EB2M-2eCsz_CCeQmEPWMORFu20H7MzEOaAGRTBSQq6mFnUlm3810PHQQ_0UVT1hi2ra9i"/>
+<img class="w-7 h-7 rounded-full object-cover bg-surface-container-high ring-2 ring-surface-container-lowest" data-alt="Portrait of Shreya, young university woman with long hair wearing a mustard hoodie smiling casually outdoors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZUJM-AKVXZofdszhASyXED-A924bDBpGMc63MytNf99P7n_qsOLq-LRtkX0M2QUmL1X6lII8xHAVkPbaOBSEMNNYWSJfd0-UpLHKVpJJgpWgMoQ5XXIgKgClVSM9fsw7FAv9uDsaT0CMyUkc20c2X6Li4-RIFRruKFVOsh3ts9jVg9AftryUSDBau3jbJSRHDvwi-KC9qzoQbiZ1CznR8oEQ1RTd4VaYtNZZQSixp"/>
+<div class="w-7 h-7 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center text-[10px] font-bold ring-2 ring-surface-container-lowest">
+        +1
+      </div>
+</div>
+</section>
+<!-- Automated UPI Receipt & Cost Sharing Card -->
+<section class="rounded-xl bg-surface-container-lowest p-space-lg text-on-surface shadow-[0_12px_32px_-8px_rgba(124,92,230,0.08)] mb-space-lg">
+<!-- Header: Fare & Status -->
+<div class="flex items-start justify-between pb-space-md">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-outline">Student Cost Share</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-currency-lg text-currency-lg text-on-surface">₹32.00</span>
+<span class="font-body-sm text-body-sm text-outline">split / 3 seats</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<div class="inline-flex items-center gap-1 px-space-sm py-1 rounded-full bg-primary-fixed text-on-primary-fixed">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span class="font-label-md text-label-md">Auto-Settled UPI</span>
+</div>
+<span class="font-label-md text-label-md text-outline mt-1">PhonePe Direct</span>
+</div>
+</div>
+<!-- Divider Bar -->
+<div class="h-px bg-surface-container-highest w-full my-space-xs"></div>
+<!-- Itemized Split Breakdown -->
+<div class="flex flex-col gap-space-sm py-space-sm">
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">Base Energy Share (6.8 km)</span>
+<span class="font-body-md text-body-md text-on-surface">₹26.50</span>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[16px]">energy_savings_leaf</span>
+<span class="font-body-md text-body-md font-medium">COEP Eco-Campus Subsidy</span>
+</div>
+<span class="font-body-md text-body-md text-primary font-semibold">-₹2.00</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">Corridor Toll (Deccan-Shivajinagar)</span>
+<span class="font-body-md text-body-md text-on-surface">₹7.50</span>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-1">
+<span class="font-body-md text-body-md text-on-surface-variant">Scoot Student Platform Fee</span>
+<span class="px-1.5 py-0.5 rounded-full bg-surface-container font-label-md text-label-md text-primary">ZeroFee</span>
+</div>
+<span class="font-body-md text-body-md text-primary font-semibold">₹0.00</span>
+</div>
+</div>
+<!-- Divider Bar -->
+<div class="h-px bg-surface-container-highest w-full my-space-xs"></div>
+<!-- Compliance & Metadata -->
+<div class="pt-space-xs flex flex-col gap-space-xs">
+<div class="flex items-center justify-between text-outline font-label-md text-label-md">
+<span>TXN REF: UPI-SCOOT-92840175</span>
+<span>08:37 AM IST</span>
+</div>
+<div class="flex items-center gap-space-xs p-space-xs rounded bg-surface-container-low mt-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">verified_user</span>
+<p class="font-label-md text-label-md text-on-surface-variant">
+          MH 2026 Non-Commercial Carpool Standard • Compliant non-profit student share under ₹38 cap.
+        </p>
+</div>
+</div>
+<!-- Download Invoice Pill Link -->
+<button class="w-full mt-space-md py-2.5 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface flex items-center justify-center gap-space-xs transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">download</span>
+<span class="font-label-lg text-label-lg">Get College Reimbursement PDF</span>
+</button>
+</section>
+<!-- Optional Student Gesture: Energy / Chai Treat -->
+<section class="rounded-lg bg-surface-container-low p-space-md mb-space-xl">
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="material-symbols-outlined text-[18px] text-secondary">local_cafe</span>
+<h3 class="font-title-md text-title-md text-on-surface">Send a quick Campus Perk to Tanvi?</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">
+      Optional token of appreciation for keeping the morning commute stress-free.
+    </p>
+<div class="flex gap-space-xs overflow-x-auto no-scrollbar">
+<button class="tip-option px-space-md py-2 rounded-full bg-surface-container-lowest text-on-surface font-label-lg text-label-lg shrink-0 shadow-xs active:scale-95 transition-all" type="button">
+        ₹10 (Cutting Chai ☕)
+      </button>
+<button class="tip-option px-space-md py-2 rounded-full bg-surface-container-lowest text-on-surface font-label-lg text-label-lg shrink-0 shadow-xs active:scale-95 transition-all" type="button">
+        ₹20 (Filter Coffee ☕)
+      </button>
+<button class="tip-option px-space-md py-2 rounded-full bg-surface-container text-on-surface-variant font-label-lg text-label-lg shrink-0 active:scale-95 transition-all" type="button">
+        Maybe Next Time
+      </button>
+</div>
+</section>
+<!-- Action CTAs -->
+<div class="flex flex-col gap-space-sm">
+<!-- Midnight Dark Primary Stadium Button -->
+<button class="w-full py-4 rounded-full bg-inverse-surface text-inverse-on-surface font-headline-sm text-headline-sm flex items-center justify-center gap-space-xs shadow-md active:scale-[0.98] transition-transform" type="button">
+<span>Submit Rating &amp; Done</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<!-- Secondary Soft Campus Route Saver -->
+<button class="w-full py-3.5 rounded-full bg-primary-fixed text-on-primary-fixed font-title-md text-title-md flex items-center justify-center gap-space-xs active:scale-[0.98] transition-transform" type="button">
+<span class="material-symbols-outlined text-[18px]">bookmark_add</span>
+<span>Save for Tomorrow's 08:15 AM Ride</span>
+</button>
+</div>
+</div>
+<script>
+  // Interactive Star Rating Behavior
+  const starButtons = document.querySelectorAll('#star-rating-group .star-btn');
+  starButtons.forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+      starButtons.forEach((b, i) => {
+        const icon = b.querySelector('span');
+        if (i <= index) {
+          icon.style.fontVariationSettings = "'FILL' 1";
+          b.classList.add('text-secondary');
+          b.classList.remove('text-outline');
+        } else {
+          icon.style.fontVariationSettings = "'FILL' 0";
+          b.classList.remove('text-secondary');
+          b.classList.add('text-outline');
+        }
+      });
+    });
+  });
+
+  // Peer Tag Pill Selection Toggle
+  const tagPills = document.querySelectorAll('.tag-pill');
+  tagPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      const isSelected = pill.classList.contains('bg-primary');
+      if (isSelected) {
+        pill.classList.remove('bg-primary', 'text-on-primary');
+        pill.classList.add('bg-surface-container-lowest', 'text-on-surface');
+      } else {
+        pill.classList.remove('bg-surface-container-lowest', 'text-on-surface');
+        pill.classList.add('bg-primary', 'text-on-primary');
+      }
+    });
+  });
+
+  // Tip Selector Highlight
+  const tipOptions = document.querySelectorAll('.tip-option');
+  tipOptions.forEach(opt => {
+    opt.addEventListener('click', () => {
+      tipOptions.forEach(o => {
+        o.classList.remove('bg-primary', 'text-on-primary');
+        o.classList.add('bg-surface-container-lowest', 'text-on-surface');
+      });
+      opt.classList.remove('bg-surface-container-lowest', 'text-on-surface', 'bg-surface-container', 'text-on-surface-variant');
+      opt.classList.add('bg-primary', 'text-on-primary');
+    });
+  });
+</script></main></body></html>

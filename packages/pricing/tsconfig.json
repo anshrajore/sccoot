@@ -1,0 +1,9 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "types": ["vitest/globals", "node"],
+    "paths": { "@scoot/domain": ["../domain/src/index.ts"] }
+  },
+  "include": ["src"]
+}

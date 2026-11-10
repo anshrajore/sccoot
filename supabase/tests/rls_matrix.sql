@@ -1,0 +1,7 @@
+-- RLS matrix (run with pgTAP or manual role switching after supabase start).
+-- owner: can read own commute_templates, cannot read stranger templates
+-- counterpart: confirmed booking parties can read booking_requests
+-- stranger: authenticated without relationship sees no latest_trip_locations
+-- reviewer: assigned verification_cases only (ops_reviewer)
+-- pickup_otps: no select for authenticated (hashed, command-only)
+-- jurisdiction_policies: readable; writes platform_admin only

@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "lib": ["ES2022"],
+    "types": ["react"],
+    "paths": {
+      "@scoot/design-system": ["../../packages/design-system/src/index.ts"],
+      "@scoot/api-client": ["../../packages/api-client/src/index.ts"]
+    }
+  },
+  "include": ["app", "src"]
+}

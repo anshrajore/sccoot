@@ -1,0 +1,21 @@
+{
+  "name": "scoot",
+  "private": true,
+  "packageManager": "pnpm@9.15.0",
+  "scripts": {
+    "lint": "eslint packages apps/admin && turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test && vitest run tests",
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "preview": "python3 -m http.server 8765"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.16.0",
+    "turbo": "^2.3.3",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8",
+    "eslint": "^9.16.0",
+    "prettier": "^3.4.2"
+  }
+}
